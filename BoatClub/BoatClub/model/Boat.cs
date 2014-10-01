@@ -62,7 +62,7 @@ namespace BoatClub.model
         public void AddBoat(int memberID, int boatID, string boatType, int length)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("/data/BoatClub.xml");
+            xmlDoc.Load("~/data/BoatClub.xml");
             XmlNode rootNode = xmlDoc.GetElementById("Boats");
             xmlDoc.AppendChild(rootNode);
 
@@ -79,7 +79,7 @@ namespace BoatClub.model
             XmlAttribute xLength = xmlDoc.CreateAttribute("Length");
             xLength.Value = length.ToString();            
 
-            xmlDoc.Save("/data/BoatClub.xml");
+            xmlDoc.Save("~/data/BoatClub.xml");
         }
 
         public void RemoveBoat()
