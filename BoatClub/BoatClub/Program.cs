@@ -10,6 +10,7 @@ namespace BoatClub
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
