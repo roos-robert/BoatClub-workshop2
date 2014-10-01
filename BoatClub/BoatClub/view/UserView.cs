@@ -30,6 +30,7 @@ namespace BoatClub.view
         {
             
             Console.WriteLine("Lägg till medlem.");
+            Console.ReadKey();
         }
 
         public void UpdateUser()
