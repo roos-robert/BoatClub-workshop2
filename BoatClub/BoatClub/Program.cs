@@ -33,7 +33,7 @@ namespace BoatClub
                     case (int)MenuChoice.ExitConsole:
                         return;
                     case (int)MenuChoice.AddMember:
-                        userView.AddUser();
+                        userView.AddUser(userModel);
                         return;
                     default:
                         break;

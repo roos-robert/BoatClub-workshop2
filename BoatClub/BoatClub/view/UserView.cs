@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BoatClub.model;
 
 namespace BoatClub.view
 {
@@ -26,19 +27,16 @@ namespace BoatClub.view
             Console.CursorVisible = true;
         }
 
-        public void AddUser()
+        public void AddUser(User userModel)
         {
-            int socialSecurity;
             string name;
+            int socialSecurity;
+            int memberID;
 
             Console.Clear();
             Console.WriteLine("Lägg till medlem.\n");
             Console.Write("Ange namn: ");
             name = Console.ReadLine();
-
-
-            Console.WriteLine("Lägg till medlem.");
-            Console.ReadKey();
 
             while (true)
             {
@@ -55,7 +53,24 @@ namespace BoatClub.view
                 }
             }
 
+            while (true)
+            {
+                try
+                {
+                    Console.Write("\nAnge önskat medlemsnummer (siffror endast): ");
+                    memberID = Int32.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ange ett korrekt medlemsnummer!");
+                    //
+                }
+            }
+
             // TODO Stuffs for adding the user.
+
+            userModel.AddUser(name, socialSecurity, memberID);
 
             Console.WriteLine("\nTack! Medlemmen har nu lagts till i registret!");
             ContinueOnKeyPressed();
