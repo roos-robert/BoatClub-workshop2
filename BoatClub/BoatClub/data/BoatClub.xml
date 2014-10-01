@@ -1,1 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BoatClub>
+  <Users>
+    <User>
+      <MemberID>1</MemberID>
+      <Name>Mattias</Name>
+      <SocialSecurity>820711</SocialSecurity>
+    </User>
+  </Users>
+  <Boats>
+    <Boat>
+      <BoatID>1</BoatID>
+      <MemberID>1</MemberID>
+      <Type>Segelbåt</Type>
+      <Length>9</Length>
+    </Boat>
+  </Boats>
+</BoatClub>
