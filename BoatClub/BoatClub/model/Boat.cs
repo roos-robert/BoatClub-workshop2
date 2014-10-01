@@ -18,24 +18,64 @@ namespace BoatClub.model
         public int BoatId 
         {
             get { return this._BoatID; }
-            set { this._BoatID = value; }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Null not allowed");
+                }
+                else
+                {
+                    this._BoatID = value;
+                }
+            }
         }
 
         public int MemberID
         {
             get { return this._MemberID; }
-            set { this._MemberID = value; }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Null not allowed");
+                }
+                else
+                {
+                    this._MemberID = value;
+                }
+            }
         }
         public string BoatType
         {
             get { return this._BoatType; }
-            set { this._BoatType = value; }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Null not allowed");
+                }
+                else
+                {
+                    this._BoatType = value;
+                }
+            }
         }
 
         public int Length
         {
             get { return this._Length; }
-            set { this._Length = value; }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Null not allowed");
+                }
+                else
+                {
+                    this._Length = value;
+                }
+            }
         }
 
         //Methods
@@ -54,7 +94,7 @@ namespace BoatClub.model
 
         }
 
-        public void GetBoatInfo()
+        public static string GetBoatInfo()
         {
             throw new NotImplementedException("Finns ej");
         }
