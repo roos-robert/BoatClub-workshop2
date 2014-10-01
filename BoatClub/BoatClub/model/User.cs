@@ -64,7 +64,6 @@ namespace BoatClub.model
         }
 
         // Constructor
-
         public User()
         {
             // TOM!
