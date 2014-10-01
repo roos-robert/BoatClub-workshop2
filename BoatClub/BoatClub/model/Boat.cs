@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace BoatClub.model
 {
@@ -60,6 +61,9 @@ namespace BoatClub.model
         //Methods
         public void AddBoat()
         {
+            XmlDocument xmldoc = new XmlDocument();
+            XmlNode rootNode = xmldoc.GetElementById("Boats");
+            xmldoc.AppendChild(rootNode);
 
         }
 
