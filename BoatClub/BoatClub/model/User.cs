@@ -14,6 +14,7 @@ namespace BoatClub.model
         private int _memberID;
         private string _name;
         private int _socialSecurity;
+        private string XMLPath = "../../data/BoatClub.xml";
 
         // Properties
         public int MemberID
@@ -37,25 +38,25 @@ namespace BoatClub.model
         // Methods
         public void AddUser(string name, int socialSecurity, int memberId)
         {
-            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
+            XDocument xml = XDocument.Load(XMLPath);
 
             xml.Root.Element("Users").Add(new XElement("User",
                     new XAttribute("name", name),
                     new XAttribute("socialSecurity", socialSecurity),
                     new XAttribute("memberId", memberId)
                 ));
-            xml.Save("../../data/BoatClub.xml");
+            xml.Save(XMLPath);
         }
 
-        public void RemoveUser()
+        public void RemoveUser(int memberId)
         {
-            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
+            XDocument xml = XDocument.Load(XMLPath);
 
             xml.Descendants("User")
-                .Where(x => (int)x.Attribute("memberId") == 3)
+                .Where(x => (int)x.Attribute("memberId") == memberId)
                 .Remove();
 
-            xml.Save("../../data/BoatClub.xml");
+            xml.Save(XMLPath);
         }
 
         public void UpdateUser()

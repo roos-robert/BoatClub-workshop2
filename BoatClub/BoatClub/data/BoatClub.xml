@@ -4,5 +4,7 @@
     <User name="Mattias" socialSecurity="820711" memberId="1" />
     <User name="Robert" socialSecurity="910317" memberId="2" />
   </Users>
-  <Boats></Boats>
+  <Boats>
+    <Boat boatId="1" memberId="1" boatType="Segelbåt" boatLength="3" />
+  </Boats>
 </BoatClub>

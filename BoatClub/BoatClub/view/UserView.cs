@@ -86,9 +86,10 @@ namespace BoatClub.view
 
         }
 
-        public void RemoveUser(User userModel)
+        public void RemoveUser(User userModel, int userId)
         {
-            userModel.RemoveUser();
+            userModel.RemoveUser(userId);
+            Console.WriteLine("Medlemmen har raderats ur registret!");
             ContinueOnKeyPressed();
         }
 

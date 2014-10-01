@@ -73,9 +73,15 @@ namespace BoatClub.model
             xml.Save("../../data/BoatClub.xml");
         }
 
-        public void RemoveBoat()
+        public void RemoveBoat(int boatId)
         {
+            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
 
+            xml.Descendants("Boat")
+                .Where(x => (int)x.Attribute("boatId") == boatId)
+                .Remove();
+
+            xml.Save("../../data/BoatClub.xml");
         }
 
         public void UpdateBoat()

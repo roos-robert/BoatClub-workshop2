@@ -37,7 +37,7 @@ namespace BoatClub
                         userView.AddUser(userModel);
                         return;
                     case (int)MenuChoice.ListMembersSimple:
-                        userView.RemoveUser(userModel);
+                        
                         return;
                     default:
                         break;
