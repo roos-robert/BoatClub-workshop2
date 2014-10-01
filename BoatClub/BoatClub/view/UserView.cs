@@ -86,9 +86,10 @@ namespace BoatClub.view
 
         }
 
-        public void RemoveUser()
+        public void RemoveUser(User userModel)
         {
-
+            userModel.RemoveUser();
+            ContinueOnKeyPressed();
         }
 
         public void ShowUser()

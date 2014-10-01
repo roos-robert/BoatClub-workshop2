@@ -49,7 +49,13 @@ namespace BoatClub.model
 
         public void RemoveUser()
         {
+            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
 
+            xml.Descendants("User")
+                .Where(x => (int)x.Attribute("memberId") == 3)
+                .Remove();
+
+            xml.Save("../../data/BoatClub.xml");
         }
 
         public void UpdateUser()

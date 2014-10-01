@@ -14,6 +14,7 @@ namespace BoatClub
         {
             ExitConsole = 0,
             AddMember = 1,
+            ListMembersSimple = 2,
         }
 
         static void Main(string[] args)
@@ -34,6 +35,9 @@ namespace BoatClub
                         return;
                     case (int)MenuChoice.AddMember:
                         userView.AddUser(userModel);
+                        return;
+                    case (int)MenuChoice.ListMembersSimple:
+                        userView.RemoveUser(userModel);
                         return;
                     default:
                         break;
