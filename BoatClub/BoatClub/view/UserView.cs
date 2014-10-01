@@ -28,8 +28,33 @@ namespace BoatClub.view
 
         public void AddUser()
         {
+            int socialSecurity;
+            string name;
+
+            Console.Clear();
+            Console.WriteLine("Lägg till medlem.\n");
+            Console.Write("Ange namn: ");
+            name = Console.ReadLine();
             
-            Console.WriteLine("Lägg till medlem.");
+            while(true)
+            {
+                try
+                {
+                    Console.Write("\nAnge personnummer: ");
+                    socialSecurity = Int32.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ange ett korrekt personnummer!");
+                    //
+                }
+            }
+
+            // TODO Stuffs for adding the user.
+
+            Console.WriteLine("\nTack! Medlemmen har nu lagts till i registret!");
+            ContinueOnKeyPressed();
         }
 
         public void UpdateUser()
