@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BoatClub>
   <Users>
-    <User name="1" />
+    <User name="Mattias" socialSecurity="820711" memberId="1" />
+    <User name="Robert" socialSecurity="910317" memberId="2" />
   </Users>
   <Boats></Boats>
 </BoatClub>

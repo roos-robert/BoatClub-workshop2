@@ -40,7 +40,9 @@ namespace BoatClub.model
             XDocument xml = XDocument.Load("../../data/BoatClub.xml");
 
             xml.Root.Element("Users").Add(new XElement("User",
-                    new XAttribute("name", name)
+                    new XAttribute("name", name),
+                    new XAttribute("socialSecurity", socialSecurity),
+                    new XAttribute("memberId", memberId)
                 ));
             xml.Save("../../data/BoatClub.xml");
         }

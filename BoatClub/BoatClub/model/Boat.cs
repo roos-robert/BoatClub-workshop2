@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace BoatClub.model
 {
@@ -61,25 +62,15 @@ namespace BoatClub.model
         //Methods
         public void AddBoat(int memberID, int boatID, string boatType, int length)
         {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("../../data/BoatClub.xml");
-            XmlNode rootNode = xmlDoc.GetElementById("Boats");
-            xmlDoc.AppendChild(rootNode);
+            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
 
-            XmlNode userNode = xmlDoc.CreateElement("Boat");
-            XmlAttribute xBoatID = xmlDoc.CreateAttribute("BoatID");
-            xBoatID.Value = boatID.ToString();
-
-            XmlAttribute xMemberID = xmlDoc.CreateAttribute("MemberID");
-            xMemberID.Value = memberID.ToString();
-
-            XmlAttribute xBoatType = xmlDoc.CreateAttribute("BoatType");
-            xBoatType.Value = boatType.ToString();
-
-            XmlAttribute xLength = xmlDoc.CreateAttribute("Length");
-            xLength.Value = length.ToString();
-
-            xmlDoc.Save("../../data/BoatClub.xml");
+            xml.Root.Element("Users").Add(new XElement("Boat",
+                    new XAttribute("memberId", memberID),
+                    new XAttribute("boatId", boatID),
+                    new XAttribute("boatType", boatType),
+                    new XAttribute("length", length)
+                ));
+            xml.Save("../../data/BoatClub.xml");
         }
 
         public void RemoveBoat()
