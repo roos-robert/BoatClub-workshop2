@@ -56,9 +56,15 @@ namespace BoatClub
             do
             {
                 Console.Clear();
-                Console.WriteLine("Båtklubben sista färden", ConsoleColor.DarkCyan, ConsoleColor.White);
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine("Båtklubben sista färden");
                 Console.WriteLine("\n - Arkiv -------------------------------------------\n");
-                Console.WriteLine(" 0: Avslutar programmet"); 
+                Console.WriteLine(" 0: Avslutar programmet");
+                Console.WriteLine(" 1: Lägg till medlem");
+                Console.WriteLine(" 2: Enkel lista över medlemmar");
+                Console.WriteLine(" 3: Fullständig lista över medlemmar");
+                Console.WriteLine(" 4: Visa medlem");
+                Console.WriteLine(" 5: Registrera ny båt");                
                 Console.Write(" Ange menyval [0-5]: ");
 
                 if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 5)

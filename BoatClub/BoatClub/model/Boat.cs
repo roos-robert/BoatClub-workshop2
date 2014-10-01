@@ -15,41 +15,27 @@ namespace BoatClub.model
         private int _Length;
 
         //properties
-        public int BoatId 
+        public int BoatId
         {
             get { return this._BoatID; }
-            set 
+            set
             {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("Null not allowed");
-                }
-                else
-                {
-                    this._BoatID = value;
-                }
+                this._BoatID = value;
             }
         }
 
         public int MemberID
         {
             get { return this._MemberID; }
-            set 
+            set
             {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("Null not allowed");
-                }
-                else
-                {
-                    this._MemberID = value;
-                }
+                this._MemberID = value;
             }
         }
         public string BoatType
         {
             get { return this._BoatType; }
-            set 
+            set
             {
                 if (value == null)
                 {
@@ -65,23 +51,16 @@ namespace BoatClub.model
         public int Length
         {
             get { return this._Length; }
-            set 
+            set
             {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("Null not allowed");
-                }
-                else
-                {
-                    this._Length = value;
-                }
+                this._Length = value;
             }
         }
 
         //Methods
-        public void AddBoat() 
+        public void AddBoat()
         {
-            
+
         }
 
         public void RemoveBoat()
