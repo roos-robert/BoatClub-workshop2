@@ -10,6 +10,11 @@ namespace BoatClub
 {
     class Program
     {
+        private enum MenuChoice
+        {
+            ExitConsole = 0,
+        }
+
         static void Main(string[] args)
         {
             User userModel = new User();
@@ -17,6 +22,56 @@ namespace BoatClub
 
             BoatView boatView = new BoatView();
             UserView userView = new UserView();
+
+            while (true)
+            {
+                int menuChoice = ViewMainMenu();
+
+                switch (menuChoice)
+                {
+                    case (int)MenuChoice.ExitConsole:
+                        return;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private static void ContinueOnKeyPressed()
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\nTryck på en tangent för att fortsätta!\n");
+            Console.ResetColor();
+            Console.CursorVisible = false;
+            Console.ReadKey(true);
+            Console.Clear();
+            Console.CursorVisible = true;
+        }
+
+        private static int ViewMainMenu()
+        {
+            int menuIndex;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Båtklubben sista färden", ConsoleColor.DarkCyan, ConsoleColor.White);
+                Console.WriteLine("\n - Arkiv -------------------------------------------\n");
+                Console.WriteLine(" 0: Avslutar programmet"); 
+                Console.Write(" Ange menyval [0-5]: ");
+
+                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 5)
+                {
+                    return menuIndex;
+                }
+                else
+                {
+                    Console.Write("\nVänligen ange ett nummer mellan 0 och 5.\n", ConsoleColor.Red);
+                    ContinueOnKeyPressed();
+                }
+
+            } while (true);
         }
     }
 }
