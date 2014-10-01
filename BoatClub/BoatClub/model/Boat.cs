@@ -8,5 +8,9 @@ namespace BoatClub.model
 {
     class Boat
     {
+        private int BoatID;
+        private int MemberID;
+        private string Type;
+        private int Length;
     }
 }
