@@ -68,13 +68,17 @@ namespace BoatClub.view
                 }
             }
 
-            // TODO Stuffs for adding the user.
-
-            userModel.AddUser(name, socialSecurity, memberID);
-
-            Console.WriteLine("\nTack! Medlemmen har nu lagts till i registret!");
+            try
+            {
+                userModel.AddUser(name, socialSecurity, memberID);
+                Console.WriteLine("\nTack! Medlemmen har nu lagts till i registret!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("\nOj! Något gick snett, försök igen.");
+            }
+            
             ContinueOnKeyPressed();
-
         }
 
         public void UpdateUser()
