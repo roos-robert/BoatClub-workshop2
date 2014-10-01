@@ -62,10 +62,8 @@ namespace BoatClub
                 Console.WriteLine(" 0: Avslutar programmet");
                 Console.WriteLine(" 1: Lägg till medlem");
                 Console.WriteLine(" 2: Enkel lista över medlemmar");
-                Console.WriteLine(" 3: Fullständig lista över medlemmar");
-                Console.WriteLine(" 4: Visa medlem");
-                Console.WriteLine(" 5: Registrera ny båt");                
-                Console.Write(" Ange menyval [0-5]: ");
+                Console.WriteLine(" 3: Fullständig lista över medlemmar");                                         
+                Console.Write(" Ange menyval [0-3]: ");
 
                 if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 5)
                 {
