@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BoatClub>
-  <Users></Users>
+  <Users>
+    <User name="1" />
+  </Users>
   <Boats></Boats>
 </BoatClub>
