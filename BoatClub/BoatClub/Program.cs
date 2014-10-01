@@ -13,6 +13,7 @@ namespace BoatClub
         private enum MenuChoice
         {
             ExitConsole = 0,
+            AddMember = 1,
         }
 
         static void Main(string[] args)
@@ -31,6 +32,9 @@ namespace BoatClub
                 {
                     case (int)MenuChoice.ExitConsole:
                         return;
+                    case (int)MenuChoice.AddMember:
+                        userView.AddUser();
+                        break;
                     default:
                         break;
                 }
@@ -56,7 +60,6 @@ namespace BoatClub
             do
             {
                 Console.Clear();
-                Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Båtklubben sista färden");
                 Console.WriteLine("\n - Arkiv -------------------------------------------\n");
                 Console.WriteLine(" 0: Avslutar programmet");
