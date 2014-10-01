@@ -13,7 +13,7 @@ namespace BoatClub.model
         // Fields
         private int _memberID;
         private string _name;
-        private int _socialSecurity;
+        private int _socialSecurity = 0;
         private string XMLPath = "../../data/BoatClub.xml";
 
         // Properties
@@ -59,8 +59,19 @@ namespace BoatClub.model
             xml.Save(XMLPath);
         }
 
-        public void UpdateUser()
+        public void UpdateUser(int memberId, string name = null, int socialSecurity = 0 )
         {
+            XDocument xml = XDocument.Load(XMLPath);
+
+            if (name != null)
+            {
+                xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("name", name);                    
+            }
+            if (socialSecurity != 0)
+            {
+                xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("socialSecurity", socialSecurity);
+            }
+            xml.Save(XMLPath);
 
         }
 
