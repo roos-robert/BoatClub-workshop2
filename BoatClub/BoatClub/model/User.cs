@@ -37,7 +37,7 @@ namespace BoatClub.model
         public void AddUser(string name, int socialSecurity, int memberId)
         {
             XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("~/data/BoatClub.xml");
+            xmlDoc.Load("../../data/BoatClub.xml");
             XmlNode rootNode = xmlDoc.GetElementById("Users");
             xmlDoc.AppendChild(rootNode);
 
@@ -51,7 +51,7 @@ namespace BoatClub.model
             XmlAttribute xMemberId = xmlDoc.CreateAttribute("MemberId");
             xMemberId.Value = memberId.ToString();
 
-            xmlDoc.Save("~/data/BoatClub.xml");
+            xmlDoc.Save("../../data/BoatClub.xml");
         }
 
         public void RemoveUser()
