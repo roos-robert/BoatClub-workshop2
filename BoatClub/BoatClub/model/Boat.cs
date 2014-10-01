@@ -12,9 +12,10 @@ namespace BoatClub.model
     {
         //fields
         private int _BoatID;
-        private int _MemberID;
+        private int _MemberID = 0;
         private string _BoatType;
-        private int _Length;
+        private int _Length = 0;
+        private string XMLPath = "../../data/BoatClub.xml";
 
         //properties
         public int BoatId
@@ -84,8 +85,25 @@ namespace BoatClub.model
             xml.Save("../../data/BoatClub.xml");
         }
 
-        public void UpdateBoat()
+        public void UpdateBoat(int memberID, int boatId, string boatType = null, int length = 0)
         {
+            XDocument xml = XDocument.Load(XMLPath);
+
+            if (boatType != null)
+            {
+                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("boatType", boatType);
+            }
+            if (length != 0)
+            {
+                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("length", length);
+            }
+            //Changing the owner of the boat
+            if (memberID != 0)
+            {
+                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("memberID", memberID);
+            }
+
+            xml.Save(XMLPath);
 
         }
 
