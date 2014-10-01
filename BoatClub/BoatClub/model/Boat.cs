@@ -77,7 +77,7 @@ namespace BoatClub.model
             xBoatType.Value = boatType.ToString();
 
             XmlAttribute xLength = xmlDoc.CreateAttribute("Length");
-            xLength.Value = length.ToString();
+            xLength.Value = length.ToString();            
 
             xmlDoc.Save("/data/BoatClub.xml");
         }

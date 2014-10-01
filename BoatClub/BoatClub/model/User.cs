@@ -3,39 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace BoatClub.model
 {
     class User
     {
         // Fields
-        private int memberID;
-        private string name;
-        private int socialSecurity;
+        private int _memberID;
+        private string _name;
+        private int _socialSecurity;
 
         // Properties
         public int MemberID
         {
-            get { return this.memberID; }
-            set { this.memberID = value; }
+            get { return this._memberID; }
+            set { this._memberID = value; }
         }
 
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
         public int SocialSecurity
         {
-            get { return this.socialSecurity; }
-            set { this.socialSecurity = value; }
+            get { return this._socialSecurity; }
+            set { this._socialSecurity = value; }
         }
 
         // Methods
-        public void AddUser()
+        public void AddUser(string name, int socialSecurity, int memberId)
         {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("/data/BoatClub.xml");
+            XmlNode rootNode = xmlDoc.GetElementById("Users");
+            xmlDoc.AppendChild(rootNode);
 
+            XmlNode userNode = xmlDoc.CreateElement("User");
+            XmlAttribute xName = xmlDoc.CreateAttribute("Name");
+            xName.Value = name;
         }
 
         public void RemoveUser()
