@@ -12,10 +12,11 @@ namespace BoatClub
     {
         static void Main(string[] args)
         {
-            User u = new User();
-            Boat b = new Boat();
+            User userModel = new User();
+            Boat boatModel = new Boat();
 
-            AppView v = new AppView();
+            BoatView boatView = new BoatView();
+            UserView userView = new UserView();
         }
     }
 }
