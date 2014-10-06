@@ -25,10 +25,13 @@ namespace BoatClub.model
                 IEnumerable<User> users = ShowUsersSimple();
 
                 foreach(var user in users)
+                {
                     if (user.MemberId == value)
                     {
-                        throw new Exception("MemberID allready in use");
+                        throw new Exception("MemberID already in use");
                     }
+                }
+                   
                 this._memberID = value; 
             }
         }
