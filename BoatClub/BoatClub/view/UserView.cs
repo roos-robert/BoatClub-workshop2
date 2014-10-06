@@ -82,9 +82,9 @@ namespace BoatClub.view
 
         }
 
-        public void ShowUsersSimple()
+        public void ShowUsersSimple(User userModel)
         {
-
+            userModel.ShowUsersSimple();
         }
 
         public void ShowUsersFull()

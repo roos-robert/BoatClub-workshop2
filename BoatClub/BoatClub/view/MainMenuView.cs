@@ -38,6 +38,7 @@ namespace BoatClub.view
                         userView.AddUser(userModel);
                         return;
                     case (int)MenuChoice.ListMembersSimple:
+                        userView.ShowUsersSimple(userModel);
                         return;
                     default:
                         break;

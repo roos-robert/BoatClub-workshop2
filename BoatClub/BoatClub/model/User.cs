@@ -14,6 +14,7 @@ namespace BoatClub.model
         private int _memberID;
         private string _name;
         private int _socialSecurity = 0;
+        private List<User> users;
         private string XMLPath = "../../data/BoatClub.xml";
 
         // Properties
@@ -79,11 +80,17 @@ namespace BoatClub.model
 
         public User ShowUser()
         {
+            
+
             throw new NotImplementedException();
         }
 
         public User ShowUsersSimple()
         {
+            XDocument xml = XDocument.Load(XMLPath);
+
+            xml.Elements("User").Descendants();
+
             throw new NotImplementedException();
         }
 
