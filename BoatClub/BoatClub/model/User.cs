@@ -14,7 +14,7 @@ namespace BoatClub.model
         private int _memberID;
         private string _name;
         private int _socialSecurity = 0;
-        private string XMLPath = "../../data/BoatClub.xml";
+        BoatClubRepository xmlDb = new BoatClubRepository();
 
         // Properties
         public int MemberId
@@ -40,30 +40,30 @@ namespace BoatClub.model
         {
             Random rnd = new Random();
             int memberId = rnd.Next(1, 999999999);
-            XDocument xml = XDocument.Load(XMLPath);
+            var xml = xmlDb.GetDocument();
 
             xml.Root.Element("Users").Add(new XElement("User",
                     new XAttribute("name", name),
                     new XAttribute("socialSecurity", socialSecurity),
                     new XAttribute("memberId", memberId)
                 ));
-            xml.Save(XMLPath);
+            xml.Save(xmlDb.XMLPath);
         }
 
         public void RemoveUser(int memberId)
         {
-            XDocument xml = XDocument.Load(XMLPath);
+            var xml = xmlDb.GetDocument();
 
             xml.Descendants("User")
                 .Where(x => (int)x.Attribute("memberId") == memberId)
                 .Remove();
 
-            xml.Save(XMLPath);
+            xml.Save(xmlDb.XMLPath);
         }
 
         public void UpdateUser(int memberId, string name = null, int socialSecurity = 0 )
         {
-            XDocument xml = XDocument.Load(XMLPath);
+            var xml = xmlDb.GetDocument();
 
             if (name != null)
             {
@@ -73,20 +73,18 @@ namespace BoatClub.model
             {
                 xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("socialSecurity", socialSecurity);
             }
-            xml.Save(XMLPath);
+            xml.Save(xmlDb.XMLPath);
 
         }
 
         public User ShowUser()
         {
-            
-
             throw new NotImplementedException();
         }
 
         public IEnumerable<User> ShowUsersSimple()
         {
-            XDocument xml = XDocument.Load(XMLPath);
+            var xml = xmlDb.GetDocument();
 
             var userList = (from user in xml.Descendants("User")
                      select new User

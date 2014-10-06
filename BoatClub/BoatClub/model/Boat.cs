@@ -15,7 +15,7 @@ namespace BoatClub.model
         private int _MemberID = 0;
         private string _BoatType;
         private int _Length = 0;
-        private string XMLPath = "../../data/BoatClub.xml";
+        BoatClubRepository xmlDb = new BoatClubRepository();
 
         //properties
         public int BoatId
@@ -66,7 +66,7 @@ namespace BoatClub.model
             Random rnd = new Random();
             int boatId = rnd.Next(1, 999999999);
 
-            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
+            var xml = xmlDb.GetDocument();
 
             xml.Root.Element("Users").Add(new XElement("Boat",
                     new XAttribute("memberId", memberId),
@@ -79,7 +79,7 @@ namespace BoatClub.model
 
         public void RemoveBoat(int boatId)
         {
-            XDocument xml = XDocument.Load("../../data/BoatClub.xml");
+            var xml = xmlDb.GetDocument();
 
             xml.Descendants("Boat")
                 .Where(x => (int)x.Attribute("boatId") == boatId)
@@ -90,7 +90,7 @@ namespace BoatClub.model
 
         public void UpdateBoat(int memberID, int boatId, string boatType = null, int length = 0)
         {
-            XDocument xml = XDocument.Load(XMLPath);
+            var xml = xmlDb.GetDocument();
 
             if (boatType != null)
             {
@@ -106,7 +106,7 @@ namespace BoatClub.model
                 xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("memberID", memberID);
             }
 
-            xml.Save(XMLPath);
+            xml.Save(xmlDb.XMLPath);
 
         }
 
@@ -117,7 +117,7 @@ namespace BoatClub.model
 
         public int NumberOfBoats(int memberId)
         {
-            XDocument xml = XDocument.Load(XMLPath);
+            var xml = xmlDb.GetDocument();
 
             return xml.Descendants("Boat")
                     .Where(x => (int)x.Attribute("memberId") == memberId).Count();
