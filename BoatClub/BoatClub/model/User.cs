@@ -20,7 +20,17 @@ namespace BoatClub.model
         public int MemberId
         {
             get { return this._memberID; }
-            set { this._memberID = value; }
+            set 
+            {                                
+                IEnumerable<User> users = ShowUsersSimple();
+
+                foreach(var user in users)
+                    if (user.MemberId == value)
+                    {
+                        throw new Exception("MemberID allready in use");
+                    }
+                this._memberID = value; 
+            }
         }
 
         public string Name
