@@ -48,7 +48,6 @@ namespace BoatClub.view
                 catch (Exception)
                 {
                     Console.WriteLine("Ange ett korrekt personnummer!");
-                    //
                 }
             }
 
@@ -70,9 +69,35 @@ namespace BoatClub.view
 
         }
 
-        public void RemoveUser(User userModel, int userId)
+        public void RemoveUser(User userModel)
         {
-            userModel.RemoveUser(userId);
+            int memberId;
+            Console.Clear();
+            Console.WriteLine("Radera medlem.\n");
+
+            while (true)
+            {
+                try
+                {
+                    Console.Write("\nAnge medlemsid: ");
+                    memberId = Int32.Parse(Console.ReadLine());
+                    try
+                    {
+                        userModel.RemoveUser(memberId);
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Ange en existerande medlem!");
+                    }
+                    
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ange ett korrekt medlemsid!");
+                }                
+            }
+
             Console.WriteLine("Medlemmen har raderats ur registret!");
             ContinueOnKeyPressed();
         }
@@ -91,10 +116,10 @@ namespace BoatClub.view
             foreach(var user in users)
             {
                 Console.WriteLine("------------------------------");
-                Console.WriteLine("Name: {0}\n", user.Name);
+                Console.WriteLine("Namn: {0}\n", user.Name);
                 Console.WriteLine("ID: {0}\n", user.MemberId);
-                Console.WriteLine("Social Security: {0}\n", user.SocialSecurity);
-                Console.WriteLine("Number of boats: {0}", boatModel.NumberOfBoats(user.MemberId));
+                Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
+                Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
                 Console.WriteLine("------------------------------\n");
             }
 

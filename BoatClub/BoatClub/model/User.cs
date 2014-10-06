@@ -54,11 +54,18 @@ namespace BoatClub.model
         {
             var xml = xmlDb.GetDocument();
 
-            xml.Descendants("User")
-                .Where(x => (int)x.Attribute("memberId") == memberId)
-                .Remove();
+            if (GetUser(memberId) != null)
+            {
+                xml.Descendants("User")
+                    .Where(x => (int)x.Attribute("memberId") == memberId)
+                    .Remove();
 
-            xml.Save(xmlDb.XMLPath);
+                xml.Save(xmlDb.XMLPath);
+            }
+            else
+            {
+                throw new ArgumentNullException();
+            }
         }
 
         public void UpdateUser(int memberId, string name = null, int socialSecurity = 0 )
@@ -77,9 +84,19 @@ namespace BoatClub.model
 
         }
 
-        public User ShowUser()
+        public User GetUser(int memberId)
         {
-            throw new NotImplementedException();
+            var xml = xmlDb.GetDocument();
+
+            var singleUser = (from user in xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId)
+                         select new User
+                         {
+                             Name = (string)user.Attribute("name"),
+                             SocialSecurity = (int)user.Attribute("socialSecurity"),
+                             MemberId = (int)user.Attribute("memberId")
+                         }).Single();
+
+            return singleUser;
         }
 
         public IEnumerable<User> ShowUsersSimple()

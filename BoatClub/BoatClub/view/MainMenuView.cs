@@ -20,7 +20,8 @@ namespace BoatClub.view
         {
             ExitConsole = 0,
             AddMember = 1,
-            ListMembersSimple = 2,
+            RemoveMember = 2,
+            ListMembersSimple = 3,
         }
 
         public void InitMenu()
@@ -36,6 +37,9 @@ namespace BoatClub.view
                         return;
                     case (int)MenuChoice.AddMember:
                         userView.AddUser(userModel);
+                        return;
+                    case (int)MenuChoice.RemoveMember:
+                        userView.RemoveUser(userModel);
                         return;
                     case (int)MenuChoice.ListMembersSimple:
                         userView.ShowUsersSimple(userModel, boatModel);
@@ -69,8 +73,9 @@ namespace BoatClub.view
                 Console.WriteLine("\n - Arkiv -------------------------------------------\n");
                 Console.WriteLine(" 0: Avslutar programmet");
                 Console.WriteLine(" 1: Lägg till medlem");
-                Console.WriteLine(" 2: Enkel lista över medlemmar");
-                Console.WriteLine(" 3: Fullständig lista över medlemmar");
+                Console.WriteLine(" 2: Radera medlem");
+                Console.WriteLine(" 3: Enkel lista över medlemmar");
+                Console.WriteLine(" 4: Fullständig lista över medlemmar");
                 Console.Write(" Ange menyval [0-3]: ");
 
                 if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 5)
