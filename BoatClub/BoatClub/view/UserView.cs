@@ -82,7 +82,7 @@ namespace BoatClub.view
 
         }
 
-        public void ShowUsersSimple(User userModel)
+        public void ShowUsersSimple(User userModel, Boat boatModel)
         {
             Console.Clear();
 
@@ -90,10 +90,11 @@ namespace BoatClub.view
 
             foreach(var user in users)
             {
-                Console.WriteLine("------------------------------\n");
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("Name: {0}\n", user.Name);
                 Console.WriteLine("ID: {0}\n", user.MemberId);
                 Console.WriteLine("Social Security: {0}\n", user.SocialSecurity);
+                Console.WriteLine("Number of boats: {0}", boatModel.NumberOfBoats(user.MemberId));
                 Console.WriteLine("------------------------------\n");
             }
 

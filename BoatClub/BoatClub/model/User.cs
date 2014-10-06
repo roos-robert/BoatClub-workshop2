@@ -88,7 +88,7 @@ namespace BoatClub.model
         {
             XDocument xml = XDocument.Load(XMLPath);
 
-            var x = (from user in xml.Descendants("User")
+            var userList = (from user in xml.Descendants("User")
                      select new User
                      {
                          Name = (string)user.Attribute("name"),
@@ -96,7 +96,7 @@ namespace BoatClub.model
                          MemberId = (int)user.Attribute("memberId")
                      }).ToList();
 
-            return x;         
+            return userList;         
         }
 
         public User ShowUsersFull()

@@ -7,6 +7,8 @@
     <User name="Kalle" socialSecurity="23123" memberId="470080994" />
   </Users>
   <Boats>
-    <Boat boatId="1" memberId="1" boatType="Segelbåt" boatLength="3" />
+    <Boat boatId="1" memberId="342931446" boatType="Segelbåt" boatLength="3" />
+    <Boat boatId="2" memberId="342931446" boatType="Segelbåt" boatLength="3" />
+    <Boat boatId="3" memberId="470080994" boatType="Segelbåt" boatLength="3" />
   </Boats>
 </BoatClub>

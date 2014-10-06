@@ -61,13 +61,16 @@ namespace BoatClub.model
         }
 
         //Methods
-        public void AddBoat(int memberID, int boatID, string boatType, int length)
+        public void AddBoat(int memberId, string boatType, int length)
         {
+            Random rnd = new Random();
+            int boatId = rnd.Next(1, 999999999);
+
             XDocument xml = XDocument.Load("../../data/BoatClub.xml");
 
             xml.Root.Element("Users").Add(new XElement("Boat",
-                    new XAttribute("memberId", memberID),
-                    new XAttribute("boatId", boatID),
+                    new XAttribute("memberId", memberId),
+                    new XAttribute("boatId", boatId),
                     new XAttribute("boatType", boatType),
                     new XAttribute("length", length)
                 ));
@@ -110,6 +113,14 @@ namespace BoatClub.model
         public static string GetBoatInfo()
         {
             throw new NotImplementedException("Finns ej");
+        }
+
+        public int NumberOfBoats(int memberId)
+        {
+            XDocument xml = XDocument.Load(XMLPath);
+
+            return xml.Descendants("Boat")
+                    .Where(x => (int)x.Attribute("memberId") == memberId).Count();
         }
     }
 }
