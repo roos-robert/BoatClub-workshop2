@@ -2,6 +2,9 @@
 <BoatClub>
   <Users>
     <User name="Robert Roos" socialSecurity="1111111111" memberId="342931446" />
+    <User name="Matte2" socialSecurity="12312" memberId="786218425" />
+    <User name="Erik" socialSecurity="131231" memberId="58937304" />
+    <User name="Kalle" socialSecurity="23123" memberId="470080994" />
   </Users>
   <Boats>
     <Boat boatId="1" memberId="1" boatType="Segelbåt" boatLength="3" />

@@ -84,7 +84,20 @@ namespace BoatClub.view
 
         public void ShowUsersSimple(User userModel)
         {
-            userModel.ShowUsersSimple();
+            Console.Clear();
+
+            IEnumerable<User> users = userModel.ShowUsersSimple();
+
+            foreach(var user in users)
+            {
+                Console.WriteLine("------------------------------\n");
+                Console.WriteLine("Name: {0}\n", user.Name);
+                Console.WriteLine("ID: {0}\n", user.MemberId);
+                Console.WriteLine("Social Security: {0}\n", user.SocialSecurity);
+                Console.WriteLine("------------------------------\n");
+            }
+
+            ContinueOnKeyPressed();
         }
 
         public void ShowUsersFull()

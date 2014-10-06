@@ -14,11 +14,10 @@ namespace BoatClub.model
         private int _memberID;
         private string _name;
         private int _socialSecurity = 0;
-        private List<User> users;
         private string XMLPath = "../../data/BoatClub.xml";
 
         // Properties
-        public int MemberID
+        public int MemberId
         {
             get { return this._memberID; }
             set { this._memberID = value; }
@@ -85,13 +84,19 @@ namespace BoatClub.model
             throw new NotImplementedException();
         }
 
-        public User ShowUsersSimple()
+        public IEnumerable<User> ShowUsersSimple()
         {
             XDocument xml = XDocument.Load(XMLPath);
 
-            xml.Elements("User").Descendants();
+            var x = (from user in xml.Descendants("User")
+                     select new User
+                     {
+                         Name = (string)user.Attribute("name"),
+                         SocialSecurity = (int)user.Attribute("socialSecurity"),
+                         MemberId = (int)user.Attribute("memberId")
+                     }).ToList();
 
-            throw new NotImplementedException();
+            return x;         
         }
 
         public User ShowUsersFull()
