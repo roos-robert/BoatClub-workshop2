@@ -31,7 +31,6 @@ namespace BoatClub.view
         {
             string name;
             int socialSecurity;
-            int memberID;
 
             Console.Clear();
             Console.WriteLine("Lägg till medlem.\n");
@@ -53,24 +52,9 @@ namespace BoatClub.view
                 }
             }
 
-            while (true)
-            {
-                try
-                {
-                    Console.Write("\nAnge önskat medlemsnummer (siffror endast): ");
-                    memberID = Int32.Parse(Console.ReadLine());
-                    break;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Ange ett korrekt medlemsnummer!");
-                    //
-                }
-            }
-
             try
             {
-                userModel.AddUser(name, socialSecurity, memberID);
+                userModel.AddUser(name, socialSecurity);
                 Console.WriteLine("\nTack! Medlemmen har nu lagts till i registret!");
             }
             catch (Exception)

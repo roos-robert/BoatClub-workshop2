@@ -36,8 +36,10 @@ namespace BoatClub.model
         }
 
         // Methods
-        public void AddUser(string name, int socialSecurity, int memberId)
+        public void AddUser(string name, int socialSecurity)
         {
+            Random rnd = new Random();
+            int memberId = rnd.Next(1, 999999999);
             XDocument xml = XDocument.Load(XMLPath);
 
             xml.Root.Element("Users").Add(new XElement("User",
