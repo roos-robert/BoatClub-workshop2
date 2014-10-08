@@ -22,17 +22,19 @@ namespace BoatClub.model
             get { return this._memberID; }
             set 
             {                                
-                IEnumerable<User> users = ShowUsersSimple();
+                //IEnumerable<User> users = ShowUsersSimple();
 
-                foreach(var user in users)
-                {
-                    if (user.MemberId == value)
-                    {
-                        throw new Exception("MemberID already in use");
-                    }
-                }
+                //foreach(var user in users)
+                //{
+                //    if (user.MemberId == value)
+                //    {
+                //        throw new Exception("MemberID already in use");
+                //    }
+                //}
                    
-                this._memberID = value; 
+                //this._memberID = value;
+
+                this._memberID = value;
             }
         }
 

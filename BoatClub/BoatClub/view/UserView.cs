@@ -64,9 +64,39 @@ namespace BoatClub.view
             ContinueOnKeyPressed();
         }
 
-        public void UpdateUser()
+        public void UpdateUser(User userModel)
         {
+            int memberId;
+            Console.Clear();
+            Console.WriteLine("Hantera medlem.\n");
 
+            while (true)
+            {
+                try
+                {
+                    Console.Write("\nAnge medlemsid: ");
+                    memberId = Int32.Parse(Console.ReadLine());
+                    try
+                    {
+                        // TODO get user
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Ange en existerande medlem!");
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ange ett korrekt medlemsid!");
+                }
+            }
+
+            // TODO menu where user can choose to update info or add a boat
+
+
+            ContinueOnKeyPressed();
         }
 
         public void RemoveUser(User userModel)
@@ -121,7 +151,7 @@ namespace BoatClub.view
                 Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
                 Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
                 Console.WriteLine("------------------------------\n");
-            }
+            }        
 
             ContinueOnKeyPressed();
         }
