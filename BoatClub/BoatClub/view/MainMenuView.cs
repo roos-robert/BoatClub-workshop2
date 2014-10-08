@@ -23,6 +23,8 @@ namespace BoatClub.view
             RemoveMember = 2,
             HandleMember = 3,
             ListMembersSimple = 4,
+            ListMembersFull = 5,
+            HandleBoats = 6,
         }
 
         public void InitMenu()
@@ -47,6 +49,11 @@ namespace BoatClub.view
                         return;
                     case (int)MenuChoice.ListMembersSimple:
                         userView.ShowUsersSimple(userModel, boatModel);
+                        return;
+                    case (int)MenuChoice.ListMembersFull:
+                        return;
+                    case (int)MenuChoice.HandleBoats:
+                        boatView.ViewBoatMenu();
                         return;
                     default:
                         break;
@@ -81,9 +88,10 @@ namespace BoatClub.view
                 Console.WriteLine(" 3: Hantera medlem");
                 Console.WriteLine(" 4: Enkel lista över medlemmar");
                 Console.WriteLine(" 5: Fullständig lista över medlemmar");
-                Console.Write(" Ange menyval [0-3]: ");
+                Console.WriteLine(" 6: Hantera båtar\n");
+                Console.Write(" Ange menyval [0-6]: ");
 
-                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 5)
+                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 6)
                 {
                     return menuIndex;
                 }
