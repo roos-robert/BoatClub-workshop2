@@ -108,7 +108,7 @@ namespace BoatClub.view
             while (true)
             {
                 try
-                {
+                {                    
                     Console.Write("\nAnge medlemsid: ");
                     memberId = Int32.Parse(Console.ReadLine());
                     try

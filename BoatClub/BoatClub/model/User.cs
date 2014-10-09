@@ -20,8 +20,8 @@ namespace BoatClub.model
         public int MemberId
         {
             get { return this._memberID; }
-            set 
-            {                                
+            set
+            {
                 //IEnumerable<User> users = ShowUsersSimple();
 
                 //foreach(var user in users)
@@ -31,7 +31,7 @@ namespace BoatClub.model
                 //        throw new Exception("MemberID already in use");
                 //    }
                 //}
-                   
+
                 //this._memberID = value;
 
                 this._memberID = value;
@@ -58,11 +58,13 @@ namespace BoatClub.model
             var xml = xmlDb.GetDocument();
 
             xml.Root.Element("Users").Add(new XElement("User",
-                    new XAttribute("name", name),
-                    new XAttribute("socialSecurity", socialSecurity),
-                    new XAttribute("memberId", memberId)
-                ));
+            new XAttribute("name", name),
+            new XAttribute("socialSecurity", socialSecurity),
+            new XAttribute("memberId", memberId)));
+
             xml.Save(xmlDb.XMLPath);
+
+
         }
 
         public void RemoveUser(int memberId)
@@ -83,13 +85,13 @@ namespace BoatClub.model
             }
         }
 
-        public void UpdateUser(int memberId, string name = null, int socialSecurity = 0 )
+        public void UpdateUser(int memberId, string name = null, int socialSecurity = 0)
         {
             var xml = xmlDb.GetDocument();
 
             if (name != null)
             {
-                xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("name", name);                    
+                xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("name", name);
             }
             if (socialSecurity != 0)
             {
@@ -104,12 +106,12 @@ namespace BoatClub.model
             var xml = xmlDb.GetDocument();
 
             var singleUser = (from user in xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId)
-                         select new User
-                         {
-                             Name = (string)user.Attribute("name"),
-                             SocialSecurity = (int)user.Attribute("socialSecurity"),
-                             MemberId = (int)user.Attribute("memberId")
-                         }).Single();
+                              select new User
+                              {
+                                  Name = (string)user.Attribute("name"),
+                                  SocialSecurity = (int)user.Attribute("socialSecurity"),
+                                  MemberId = (int)user.Attribute("memberId")
+                              }).Single();
 
             return singleUser;
         }
@@ -119,19 +121,29 @@ namespace BoatClub.model
             var xml = xmlDb.GetDocument();
 
             var userList = (from user in xml.Descendants("User")
-                     select new User
-                     {
-                         Name = (string)user.Attribute("name"),
-                         SocialSecurity = (int)user.Attribute("socialSecurity"),
-                         MemberId = (int)user.Attribute("memberId")
-                     }).ToList();
+                            select new User
+                            {
+                                Name = (string)user.Attribute("name"),
+                                SocialSecurity = (int)user.Attribute("socialSecurity"),
+                                MemberId = (int)user.Attribute("memberId")
+                            }).ToList();
 
-            return userList;         
+            return userList;
         }
 
-        public User ShowUsersFull()
+        public IEnumerable<User> ShowUsersFull()
         {
-            throw new NotImplementedException();
+            var xml = xmlDb.GetDocument();
+
+            var userList = (from user in xml.Descendants("User")
+                            select new User
+                            {
+                                Name = (string)user.Attribute("name"),
+                                SocialSecurity = (int)user.Attribute("socialSecurity"),
+                                MemberId = (int)user.Attribute("memberId")
+                            }).ToList();
+
+            return userList;
         }
 
         // Constructor
@@ -141,4 +153,3 @@ namespace BoatClub.model
         }
     }
 }
-    
