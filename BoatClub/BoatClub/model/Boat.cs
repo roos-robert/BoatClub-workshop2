@@ -110,9 +110,20 @@ namespace BoatClub.model
 
         }
 
-        public static string GetBoatInfo()
+        public Boat GetBoatInfo(int boatId)
         {
-            throw new NotImplementedException("Finns ej");
+            var xml = xmlDb.GetDocument();
+
+            var boatInfo = (from boat in xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId)
+                            select new Boat
+                            {
+                                BoatId = (int)boat.Attribute("boatId"),
+                                MemberID = (int)boat.Attribute("memberId"),
+                                BoatType = (string)boat.Attribute("boatType"),
+                                Length = (int)boat.Attribute("boatLength")
+                            }).Single();                                
+
+            return boatInfo;
         }
 
         public int NumberOfBoats(int memberId)
