@@ -20,22 +20,65 @@ namespace BoatClub.view
             RemoveBoat = 3,
         }
 
+        public void AddBoat(Boat boatModel)
+        {
+            int memberId;
+            string boatType;
+            int length;
+
+            Console.Clear();
+            Console.WriteLine("Lägg till ny båt.");            
+
+            //add check to see if member exists later!
+            while(true)
+            {
+                try
+                {
+                    Console.Write("\nAnge medlems id för ägaren till båten: ");
+                    memberId = Int32.Parse(Console.ReadLine());
+                    break;
+                }
+                catch(Exception)
+                {
+                    Console.WriteLine("Ange ett korrekt medlems id!");
+                }
+            }
+
+            Console.Write("Ange båtens typ: ");
+            boatType = Console.ReadLine();
+
+            while (true)
+            {
+                try
+                {
+                    Console.Write("\nAnge båtens längd: ");
+                    length = Int32.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ange båtens längd med ett heltal:");
+                }
+            }
+            ContinueOnKeyPressed();
+        }
+
         public void BoatMenu()
         {
-            while(true)
+            while (true)
             {
                 int menuChoice = ViewBoatMenu();
 
                 switch (menuChoice)
                 {
-                    case(int)MenuChoice.ExitMenu:
+                    case (int)MenuChoice.ExitMenu:
                         mainMenuView.InitMenu();
                         return;
-                    case(int)MenuChoice.AddBoat:                        
+                    case (int)MenuChoice.AddBoat:
                         return;
-                    case(int)MenuChoice.HandleBoat:
+                    case (int)MenuChoice.HandleBoat:
                         return;
-                    case(int)MenuChoice.RemoveBoat:
+                    case (int)MenuChoice.RemoveBoat:
                         return;
                     default:
                         break;
