@@ -3,11 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BoatClub.model;
 
 namespace BoatClub.view
 {
     class BoatView
     {
+        MainMenuView mainMenuView = new MainMenuView();
+        Boat boatModel = new Boat();
+
+        private enum MenuChoice
+        {
+            ExitMenu = 0,
+            AddBoat = 1,
+            HandleBoat = 2,
+            RemoveBoat = 3,
+        }
+
+        public void BoatMenu()
+        {
+            while(true)
+            {
+                int menuChoice = ViewBoatMenu();
+
+                switch (menuChoice)
+                {
+                    case(int)MenuChoice.ExitMenu:
+                        mainMenuView.InitMenu();
+                        return;
+                    case(int)MenuChoice.AddBoat:                        
+                        return;
+                    case(int)MenuChoice.HandleBoat:
+                        return;
+                    case(int)MenuChoice.RemoveBoat:
+                        return;
+                    default:
+                        break;
+                }
+            }
+        }
         private static void ContinueOnKeyPressed()
         {
             Console.BackgroundColor = ConsoleColor.Blue;
