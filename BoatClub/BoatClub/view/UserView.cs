@@ -60,13 +60,15 @@ namespace BoatClub.view
             {
                 Console.WriteLine("\nOj! Något gick snett, försök igen.");
             }
-            
+
             ContinueOnKeyPressed();
         }
 
         public void UpdateUser(User userModel)
         {
             int memberId;
+            string name;
+            int socialSecurity;
             Console.Clear();
             Console.WriteLine("Hantera medlem.\n");
 
@@ -76,27 +78,33 @@ namespace BoatClub.view
                 {
                     Console.Write("\nAnge medlemsid: ");
                     memberId = Int32.Parse(Console.ReadLine());
+
+                    Console.Write("\nAnge namn: ");
+                    name = Console.ReadLine();
+
                     try
                     {
-                        // TODO get user
-                        break;
+                        Console.Write("\nAnge personnummer, eller lämna blankt om det inte ska ändras: ");
+                        socialSecurity = Int32.Parse(Console.ReadLine());
                     }
-                    catch (Exception)
+                    catch
                     {
-                        Console.WriteLine("Ange en existerande medlem!");
+                        socialSecurity = 0;
                     }
+                    userModel.UpdateUser(memberId, name, socialSecurity);
+                    Console.WriteLine("Medlemmen är uppdaterad!");
 
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Ange ett korrekt medlemsid!");
                 }
+
+                ContinueOnKeyPressed();
             }
 
             // TODO menu where user can choose to update info or add a boat
-
-
-            ContinueOnKeyPressed();
+            
         }
 
         public void RemoveUser(User userModel)
@@ -108,7 +116,7 @@ namespace BoatClub.view
             while (true)
             {
                 try
-                {                    
+                {
                     Console.Write("\nAnge medlemsid: ");
                     memberId = Int32.Parse(Console.ReadLine());
                     try
@@ -120,12 +128,12 @@ namespace BoatClub.view
                     {
                         Console.WriteLine("Ange en existerande medlem!");
                     }
-                    
+
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Ange ett korrekt medlemsid!");
-                }                
+                }
             }
 
             Console.WriteLine("Medlemmen har raderats ur registret!");
@@ -143,7 +151,7 @@ namespace BoatClub.view
 
             IEnumerable<User> users = userModel.ShowUsersSimple();
 
-            foreach(var user in users)
+            foreach (var user in users)
             {
                 Console.WriteLine("------------------------------");
                 Console.WriteLine("Namn: {0}\n", user.Name);
@@ -151,7 +159,7 @@ namespace BoatClub.view
                 Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
                 Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
                 Console.WriteLine("------------------------------\n");
-            }        
+            }
 
             ContinueOnKeyPressed();
         }

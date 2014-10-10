@@ -25,13 +25,13 @@ namespace BoatClub.view
             int boatId;
 
             Console.Clear();
-            Console.WriteLine("Ta bort båt\n");
-            Console.Write("\nAnge båtens id för att ta bort en båt: ");
+            Console.WriteLine("Ta bort båt\n");            
 
             while (true)
             {
                 try
                 {
+                    Console.Write("\nAnge båtens id för att ta bort en båt: ");
                     boatId = Int32.Parse(Console.ReadLine());
                     boatModel.RemoveBoat(boatId);
                 }

@@ -89,7 +89,7 @@ namespace BoatClub.model
         {
             var xml = xmlDb.GetDocument();
 
-            if (name != null)
+            if (name.Length > 1)
             {
                 xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("name", name);
             }
