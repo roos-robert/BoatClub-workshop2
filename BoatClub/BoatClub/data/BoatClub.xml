@@ -5,11 +5,12 @@
     <User name="Matte2" socialSecurity="12312" memberId="786218425" />
     <User name="Erik" socialSecurity="131231" memberId="58937304" />
     <User name="Kalle" socialSecurity="23123" memberId="470080994" />
-    <User name="Amanda" socialSecurity="40128" memberId="946436441" />
+    <User name="Amanda" socialSecurity="40128" memberId="946436441" />    
   </Users>
   <Boats>
     <Boat boatId="1" memberId="342931446" boatType="Segelbåt" boatLength="3" />
     <Boat boatId="2" memberId="342931446" boatType="Segelbåt" boatLength="3" />
     <Boat boatId="3" memberId="470080994" boatType="Segelbåt" boatLength="3" />
+    <Boat memberId="786218425" boatId="471413666" boatType="Motorbåt" length="9" />
   </Boats>
 </BoatClub>

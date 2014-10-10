@@ -60,6 +60,15 @@ namespace BoatClub.view
                     Console.WriteLine("Ange båtens längd med ett heltal:");
                 }
             }
+
+            try
+            {
+                boatModel.AddBoat(memberId, boatType, length);
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("\nOj! Något gick snett, försök igen.");
+            }
             ContinueOnKeyPressed();
         }
 
@@ -75,6 +84,7 @@ namespace BoatClub.view
                         //mainMenuView.InitMenu();
                         return;
                     case (int)MenuChoice.AddBoat:
+                        AddBoat(boatModel);
                         return;
                     case (int)MenuChoice.HandleBoat:
                         return;

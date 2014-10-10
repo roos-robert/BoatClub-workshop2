@@ -68,7 +68,7 @@ namespace BoatClub.model
 
             var xml = xmlDb.GetDocument();
 
-            xml.Root.Element("Users").Add(new XElement("Boat",
+            xml.Root.Element("Boats").Add(new XElement("Boat",
                     new XAttribute("memberId", memberId),
                     new XAttribute("boatId", boatId),
                     new XAttribute("boatType", boatType),

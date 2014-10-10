@@ -53,7 +53,7 @@ namespace BoatClub.view
                     case (int)MenuChoice.ListMembersFull:
                         return;
                     case (int)MenuChoice.HandleBoats:
-                        boatView.ViewBoatMenu();
+                        boatView.BoatMenu();
                         return;
                     default:
                         break;
