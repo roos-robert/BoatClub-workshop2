@@ -9,7 +9,7 @@ namespace BoatClub.view
 {
     class BoatView
     {
-        MainMenuView mainMenuView = new MainMenuView();
+        //MainMenuView mainMenuView = new MainMenuView();
         Boat boatModel = new Boat();
 
         private enum MenuChoice
@@ -72,7 +72,7 @@ namespace BoatClub.view
                 switch (menuChoice)
                 {
                     case (int)MenuChoice.ExitMenu:
-                        mainMenuView.InitMenu();
+                        //mainMenuView.InitMenu();
                         return;
                     case (int)MenuChoice.AddBoat:
                         return;
