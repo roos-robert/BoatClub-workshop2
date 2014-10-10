@@ -64,6 +64,7 @@ namespace BoatClub.view
             try
             {
                 boatModel.AddBoat(memberId, boatType, length);
+                Console.WriteLine("\nTack! Båten har nu lagts till i registret.");
             }
             catch(Exception)
             {
