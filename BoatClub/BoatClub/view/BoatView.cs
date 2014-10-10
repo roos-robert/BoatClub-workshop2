@@ -24,6 +24,7 @@ namespace BoatClub.view
         {
             int boatId;
 
+            Console.Clear();
             Console.WriteLine("Ta bort båt\n");
             Console.Write("\nAnge båtens id för att ta bort en båt: ");
 
