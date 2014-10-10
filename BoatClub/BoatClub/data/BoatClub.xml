@@ -7,10 +7,7 @@
     <User name="Kalle" socialSecurity="23123" memberId="470080994" />
     <User name="Amanda" socialSecurity="40128" memberId="946436441" />
   </Users>
-  <Boats>
-    <Boat boatId="1" memberId="342931446" boatType="Segelbåt" boatLength="3" />
-    <Boat boatId="2" memberId="342931446" boatType="Segelbåt" boatLength="9" />
-    <Boat boatId="3" memberId="786218425" boatType="Motorbåt" boatLength="231" />
-    <Boat memberId="786218425" boatId="471413666" boatType="Motorbåt" length="9" />
+  <Boats>    
+    <Boat memberId="946436441" boatId="505409686" boatType="Eka"  boatLength="5" />
   </Boats>
 </BoatClub>

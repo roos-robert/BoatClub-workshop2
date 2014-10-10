@@ -20,6 +20,31 @@ namespace BoatClub.view
             RemoveBoat = 3,
         }
 
+        public void RemoveBoat(Boat boatModel)
+        {
+            int boatId;
+
+            Console.WriteLine("Ta bort båt\n");
+            Console.Write("\nAnge båtens id för att ta bort en båt: ");
+
+            while (true)
+            {
+                try
+                {
+                    boatId = Int32.Parse(Console.ReadLine());
+                    boatModel.RemoveBoat(boatId);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Ange ett giligt båtid.");
+                }
+                Console.WriteLine("\nBåten har tagits bort.");
+                ContinueOnKeyPressed();
+                return;
+            }
+
+        }
+
         public void HandleBoat(Boat boatModel)
         {
             int boatId;
@@ -32,7 +57,7 @@ namespace BoatClub.view
             Console.WriteLine("\nSkriv in de nya uppgifterna för en båt genom att fylla i ett korrekt id");
             Console.WriteLine("Sen fyller du i de nya uppgifterna som gäller för båten.");
 
-            while(true)
+            while (true)
             {
                 try
                 {
@@ -58,9 +83,9 @@ namespace BoatClub.view
                     {
                         length = 0;
                     }
-                    boatModel.UpdateBoat(memberId, boatId, boatType, length);                    
+                    boatModel.UpdateBoat(memberId, boatId, boatType, length);
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     Console.WriteLine("\nNågot gick fel. Kontrollera att du angett rätt båtid.");
                 }
@@ -77,10 +102,10 @@ namespace BoatClub.view
             int length;
 
             Console.Clear();
-            Console.WriteLine("Lägg till ny båt.");            
+            Console.WriteLine("Lägg till ny båt.");
 
             //add check to see if member exists later!
-            while(true)
+            while (true)
             {
                 try
                 {
@@ -88,7 +113,7 @@ namespace BoatClub.view
                     memberId = Int32.Parse(Console.ReadLine());
                     break;
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     Console.WriteLine("Ange ett korrekt medlems id!");
                 }
@@ -116,7 +141,7 @@ namespace BoatClub.view
                 boatModel.AddBoat(memberId, boatType, length);
                 Console.WriteLine("\nTack! Båten har nu lagts till i registret.");
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Console.WriteLine("\nOj! Något gick snett, försök igen.");
             }
@@ -131,7 +156,7 @@ namespace BoatClub.view
 
                 switch (menuChoice)
                 {
-                    case (int)MenuChoice.ExitMenu:                        
+                    case (int)MenuChoice.ExitMenu:
                         return;
                     case (int)MenuChoice.AddBoat:
                         AddBoat(boatModel);
@@ -140,6 +165,7 @@ namespace BoatClub.view
                         HandleBoat(boatModel);
                         return;
                     case (int)MenuChoice.RemoveBoat:
+                        RemoveBoat(boatModel);
                         return;
                     default:
                         break;

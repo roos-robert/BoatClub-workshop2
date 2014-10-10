@@ -72,7 +72,7 @@ namespace BoatClub.model
                     new XAttribute("memberId", memberId),
                     new XAttribute("boatId", boatId),
                     new XAttribute("boatType", boatType),
-                    new XAttribute("length", length)
+                    new XAttribute("boatLength", length)
                 ));
             xml.Save("../../data/BoatClub.xml");
         }
