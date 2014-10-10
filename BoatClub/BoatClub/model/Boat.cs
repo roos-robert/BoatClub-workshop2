@@ -92,18 +92,18 @@ namespace BoatClub.model
         {
             var xml = xmlDb.GetDocument();
 
-            if (boatType != null)
+            if (boatType.Length > 1)
             {
                 xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("boatType", boatType);
             }
             if (length != 0)
             {
-                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("length", length);
+                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("boatLength", length);
             }
             //Changing the owner of the boat
             if (memberID != 0)
             {
-                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("memberID", memberID);
+                xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("memberId", memberID);
             }
 
             xml.Save(xmlDb.XMLPath);

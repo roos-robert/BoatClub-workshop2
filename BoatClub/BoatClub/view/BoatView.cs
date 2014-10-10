@@ -20,6 +20,56 @@ namespace BoatClub.view
             RemoveBoat = 3,
         }
 
+        public void HandleBoat(Boat boatModel)
+        {
+            int boatId;
+            int memberId;
+            string boatType;
+            int length;
+
+            Console.Clear();
+            Console.WriteLine("Hantera båt.\n");
+            Console.WriteLine("\nSkriv in de nya uppgifterna för en båt genom att fylla i ett korrekt id");
+            Console.WriteLine("Sen fyller du i de nya uppgifterna som gäller för båten.");
+
+            while(true)
+            {
+                try
+                {
+                    Console.Write("\nAnge båtens id: ");
+                    boatId = Int32.Parse(Console.ReadLine());
+                    try
+                    {
+                        Console.Write("\n\nAnge medlemmens id. Ange 0 eller blankt om det inte ska ändras: ");
+                        memberId = Int32.Parse(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        memberId = 0;
+                    }
+                    Console.Write("\n\nAnge båtens typ. Lämna blankt om inget ska ändras: ");
+                    boatType = Console.ReadLine();
+                    try
+                    {
+                        Console.Write("\n\nAnge båtens längd. Lämna blankt om inget ska ändras: ");
+                        length = Int32.Parse(Console.ReadLine());
+                    }
+                    catch (Exception)
+                    {
+                        length = 0;
+                    }
+                    boatModel.UpdateBoat(memberId, boatId, boatType, length);                    
+                }
+                catch(Exception)
+                {
+                    Console.WriteLine("\nNågot gick fel. Kontrollera att du angett rätt båtid.");
+                }
+                Console.WriteLine("\nBåten är uppdaterad!");
+                ContinueOnKeyPressed();
+                return;
+            }
+        }
+
         public void AddBoat(Boat boatModel)
         {
             int memberId;
@@ -81,13 +131,13 @@ namespace BoatClub.view
 
                 switch (menuChoice)
                 {
-                    case (int)MenuChoice.ExitMenu:
-                        //mainMenuView.InitMenu();
+                    case (int)MenuChoice.ExitMenu:                        
                         return;
                     case (int)MenuChoice.AddBoat:
                         AddBoat(boatModel);
                         return;
                     case (int)MenuChoice.HandleBoat:
+                        HandleBoat(boatModel);
                         return;
                     case (int)MenuChoice.RemoveBoat:
                         return;
