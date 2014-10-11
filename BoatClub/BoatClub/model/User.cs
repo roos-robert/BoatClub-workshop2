@@ -35,7 +35,17 @@ namespace BoatClub.model
         public int SocialSecurity
         {
             get { return this._socialSecurity; }
-            set { this._socialSecurity = value; }
+            set 
+            {
+                if (value.ToString().Length != 10)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                else
+                {
+                    this._socialSecurity = value;
+                } 
+            }
         }
 
         // Methods

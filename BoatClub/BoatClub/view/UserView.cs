@@ -41,8 +41,14 @@ namespace BoatClub.view
             {
                 try
                 {
-                    Console.Write("\nAnge personnummer: ");
+                    Console.Write("\nAnge personnummer (10 siffror): ");
                     socialSecurity = Int32.Parse(Console.ReadLine());
+
+                    if(socialSecurity.ToString().Length != 10)
+                    {
+                        throw new ArgumentOutOfRangeException();
+                    }
+
                     break;
                 }
                 catch (Exception)
