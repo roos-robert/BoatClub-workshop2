@@ -126,6 +126,22 @@ namespace BoatClub.model
             return boatInfo;
         }
 
+        public IEnumerable<Boat> GetAllUserBoats(int memberId)
+        {
+            var xml = xmlDb.GetDocument();
+
+            var boatInfo = (from boat in xml.Descendants("Boat").Where(x => (int)x.Attribute("memberId") == memberId)
+                            select new Boat
+                            {
+                                BoatId = (int)boat.Attribute("boatId"),
+                                MemberID = (int)boat.Attribute("memberId"),
+                                BoatType = (string)boat.Attribute("boatType"),
+                                Length = (int)boat.Attribute("boatLength")
+                            }).ToList();
+
+            return boatInfo;
+        }
+
         public int NumberOfBoats(int memberId)
         {
             var xml = xmlDb.GetDocument();

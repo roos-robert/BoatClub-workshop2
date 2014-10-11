@@ -51,6 +51,7 @@ namespace BoatClub.view
                         userView.ShowUsersSimple(userModel, boatModel);
                         return;
                     case (int)MenuChoice.ListMembersFull:
+                        userView.ShowUsersFull(userModel, boatModel);
                         return;
                     case (int)MenuChoice.HandleBoats:
                         boatView.BoatMenu();

@@ -145,6 +145,35 @@ namespace BoatClub.view
 
         }
 
+        public void ShowUsersFull(User userModel, Boat boatModel)
+        {
+            Console.Clear();
+
+            IEnumerable<User> users = userModel.ShowUsersSimple();
+            
+
+            foreach (var user in users)
+            {
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("Namn: {0}\n", user.Name);
+                Console.WriteLine("ID: {0}\n", user.MemberId);
+                Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
+                Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
+                var boats = boatModel.GetAllUserBoats(user.MemberId);
+                foreach (var boat in boats)
+                {
+                    Console.WriteLine("------");
+                    Console.WriteLine("Båtens ID: {0}", boat.BoatId);
+                    Console.WriteLine("Båttyp: {0}", boat.BoatType);
+                    Console.WriteLine("Båtens längd: {0}", boat.Length);
+                    Console.WriteLine("------");
+                }
+                Console.WriteLine("------------------------------\n");
+            }
+
+            ContinueOnKeyPressed();
+        }
+
         public void ShowUsersSimple(User userModel, Boat boatModel)
         {
             Console.Clear();
