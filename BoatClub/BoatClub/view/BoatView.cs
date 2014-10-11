@@ -75,7 +75,7 @@ namespace BoatClub.view
                     boatType = Console.ReadLine();
                     try
                     {
-                        Console.Write("\n\nAnge båtens längd. Lämna blankt om inget ska ändras: ");
+                        Console.Write("\n\nAnge båtens längd i hela meter. Lämna blankt om inget ska ändras: ");
                         length = Int32.Parse(Console.ReadLine());
                     }
                     catch (Exception)
@@ -125,13 +125,13 @@ namespace BoatClub.view
             {
                 try
                 {
-                    Console.Write("\nAnge båtens längd: ");
+                    Console.Write("\nAnge båtens längd i hela meter: ");
                     length = Int32.Parse(Console.ReadLine());
                     break;
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Ange båtens längd med ett heltal:");
+                    Console.WriteLine("Ange båtens längd i hela meter:");
                 }
             }
 

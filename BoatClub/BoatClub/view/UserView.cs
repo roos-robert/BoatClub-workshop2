@@ -164,7 +164,7 @@ namespace BoatClub.view
                     Console.WriteLine("------");
                     Console.WriteLine("Båtens ID: {0}", boat.BoatId);
                     Console.WriteLine("Båttyp: {0}", boat.BoatType);
-                    Console.WriteLine("Båtens längd: {0}", boat.Length);
+                    Console.WriteLine("Båtens längd: {0} meter", boat.Length);
                     Console.WriteLine("------");
                 }
                 Console.WriteLine("------------------------------\n");
