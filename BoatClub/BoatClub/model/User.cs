@@ -13,7 +13,7 @@ namespace BoatClub.model
         // Fields
         private int _memberID;
         private string _name;
-        private int _socialSecurity = 0;
+        private int _socialSecurity = 0000000000;
         BoatClubRepository xmlDb = new BoatClubRepository();
 
         // Properties
@@ -61,8 +61,6 @@ namespace BoatClub.model
             new XAttribute("memberId", memberId)));
 
             xml.Save(xmlDb.XMLPath);
-
-
         }
 
         public void RemoveUser(int memberId)
@@ -95,8 +93,8 @@ namespace BoatClub.model
             {
                 xml.Descendants("User").Where(x => (int)x.Attribute("memberId") == memberId).Single().SetAttributeValue("socialSecurity", socialSecurity);
             }
-            xml.Save(xmlDb.XMLPath);
 
+            xml.Save(xmlDb.XMLPath);
         }
 
         public User GetUser(int memberId)
@@ -147,7 +145,7 @@ namespace BoatClub.model
         // Constructor
         public User()
         {
-            // TOM!
+            // EMPTY!
         }
     }
 }

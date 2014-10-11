@@ -9,7 +9,6 @@ namespace BoatClub.view
 {
     class BoatView
     {
-        //MainMenuView mainMenuView = new MainMenuView();
         Boat boatModel = new Boat();
 
         private enum MenuChoice
@@ -43,7 +42,6 @@ namespace BoatClub.view
                 ContinueOnKeyPressed();
                 return;
             }
-
         }
 
         public void HandleBoat(Boat boatModel)

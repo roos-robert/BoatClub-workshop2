@@ -9,12 +9,6 @@ namespace BoatClub.view
 {
     class UserView
     {
-        // Fields
-
-        // Properties
-
-        // Methods
-
         private static void ContinueOnKeyPressed()
         {
             Console.BackgroundColor = ConsoleColor.Blue;
@@ -155,8 +149,7 @@ namespace BoatClub.view
         {
             Console.Clear();
 
-            IEnumerable<User> users = userModel.ShowUsersSimple();
-            
+            IEnumerable<User> users = userModel.ShowUsersSimple();        
 
             foreach (var user in users)
             {
@@ -197,11 +190,6 @@ namespace BoatClub.view
             }
 
             ContinueOnKeyPressed();
-        }
-
-        public void ShowUsersFull()
-        {
-
         }
 
         // Constructor

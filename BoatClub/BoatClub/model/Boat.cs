@@ -10,14 +10,14 @@ namespace BoatClub.model
 {
     class Boat
     {
-        //fields
+        // Fields
         private int _BoatID;
         private int _MemberID = 0;
         private string _BoatType;
         private int _Length = 0;
         BoatClubRepository xmlDb = new BoatClubRepository();
 
-        //properties
+        // Properties
         public int BoatId
         {
             get { return this._BoatID; }
@@ -35,6 +35,7 @@ namespace BoatClub.model
                 this._MemberID = value;
             }
         }
+
         public string BoatType
         {
             get { return this._BoatType; }
@@ -74,7 +75,8 @@ namespace BoatClub.model
                     new XAttribute("boatType", boatType),
                     new XAttribute("boatLength", length)
                 ));
-            xml.Save("../../data/BoatClub.xml");
+
+            xml.Save(xmlDb.XMLPath);
         }
 
         public void RemoveBoat(int boatId)
@@ -85,7 +87,7 @@ namespace BoatClub.model
                 .Where(x => (int)x.Attribute("boatId") == boatId)
                 .Remove();
 
-            xml.Save("../../data/BoatClub.xml");
+            xml.Save(xmlDb.XMLPath);
         }
 
         public void UpdateBoat(int memberID, int boatId, string boatType = null, int length = 0)
@@ -100,6 +102,7 @@ namespace BoatClub.model
             {
                 xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId).Single().SetAttributeValue("boatLength", length);
             }
+
             //Changing the owner of the boat
             if (memberID != 0)
             {
@@ -107,7 +110,6 @@ namespace BoatClub.model
             }
 
             xml.Save(xmlDb.XMLPath);
-
         }
 
         public Boat GetBoatInfo(int boatId)
