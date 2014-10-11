@@ -13,7 +13,7 @@ namespace BoatClub.model
         // Fields
         private int _memberID;
         private string _name;
-        private int _socialSecurity = 0000000000;
+        private int _socialSecurity = 0;
         BoatClubRepository xmlDb = new BoatClubRepository();
 
         // Properties
@@ -35,17 +35,7 @@ namespace BoatClub.model
         public int SocialSecurity
         {
             get { return this._socialSecurity; }
-            set 
-            {
-                if (value.ToString().Length != 10)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                else
-                {
-                    this._socialSecurity = value;
-                } 
-            }
+            set { this._socialSecurity = value; }
         }
 
         // Methods
