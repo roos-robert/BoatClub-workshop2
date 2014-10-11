@@ -93,7 +93,6 @@ namespace BoatClub.view
                     }
                     userModel.UpdateUser(memberId, name, socialSecurity);
                     Console.WriteLine("Medlemmen är uppdaterad!");
-
                 }
                 catch (Exception)
                 {
@@ -101,6 +100,7 @@ namespace BoatClub.view
                 }
 
                 ContinueOnKeyPressed();
+                break;
             }
 
             // TODO menu where user can choose to update info or add a boat
