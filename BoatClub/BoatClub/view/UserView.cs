@@ -143,15 +143,16 @@ namespace BoatClub.view
         public void ShowUser(User userModel, Boat boatModel)
         {
             int memberId;
+            
             Console.Clear();
             Console.Write("Ange medlemsid på den medlem du vill kolla på : ");
             memberId = Int32.Parse(Console.ReadLine());
 
-            IEnumerable<User> users = userModel.ShowUsersFull();
+            IEnumerable<User> users = userModel.ShowUsersSimple();
 
             foreach (var user in users)
-            {
-                if(memberId == userModel.MemberId)
+            {                
+                if(memberId == user.MemberId)
                 {
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Namn: {0}, ID: {1}, Personnummer: {2}\n", user.Name, user.MemberId, user.SocialSecurity);
@@ -167,6 +168,7 @@ namespace BoatClub.view
                     }
                 }
             }
+            ContinueOnKeyPressed();
         }
 
         public void ShowUsersFull(User userModel, Boat boatModel)
