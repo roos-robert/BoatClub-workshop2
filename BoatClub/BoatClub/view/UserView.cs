@@ -140,9 +140,33 @@ namespace BoatClub.view
             ContinueOnKeyPressed();
         }
 
-        public void ShowUser()
+        public void ShowUser(User userModel, Boat boatModel)
         {
+            int memberId;
+            Console.Clear();
+            Console.Write("Ange medlemsid på den medlem du vill kolla på : ");
+            memberId = Int32.Parse(Console.ReadLine());
 
+            IEnumerable<User> users = userModel.ShowUsersFull();
+
+            foreach (var user in users)
+            {
+                if(memberId == userModel.MemberId)
+                {
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Namn: {0}, ID: {1}, Personnummer: {2}\n", user.Name, user.MemberId, user.SocialSecurity);
+
+                    var boats = boatModel.GetAllUserBoats(user.MemberId);
+                    foreach (var boat in boats)
+                    {
+                        Console.WriteLine("------");
+                        Console.WriteLine("Båtens ID: {0}", boat.BoatId);
+                        Console.WriteLine("Båttyp: {0}", boat.BoatType);
+                        Console.WriteLine("Båtens längd: {0} meter", boat.Length);
+                        Console.WriteLine("------");
+                    }
+                }
+            }
         }
 
         public void ShowUsersFull(User userModel, Boat boatModel)
@@ -154,10 +178,13 @@ namespace BoatClub.view
             foreach (var user in users)
             {
                 Console.WriteLine("------------------------------");
-                Console.WriteLine("Namn: {0}\n", user.Name);
-                Console.WriteLine("ID: {0}\n", user.MemberId);
-                Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
-                Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
+                Console.WriteLine("Namn: {0}, ID: {1}, Personnummer: {2}\n", user.Name, user.MemberId, user.SocialSecurity);
+                //Console.WriteLine("ID: {0}\n", user.MemberId);
+                //Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
+
+
+                //Removed the number of boats since all boats belonging to that member will be listed anyway
+                //Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
                 var boats = boatModel.GetAllUserBoats(user.MemberId);
                 foreach (var boat in boats)
                 {
