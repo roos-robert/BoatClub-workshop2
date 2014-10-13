@@ -97,13 +97,13 @@ namespace BoatClub.view
                 Console.WriteLine(" 7: Hantera båtar\n");
                 Console.Write(" Ange menyval [0-6]: ");
 
-                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 6)
+                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 7)
                 {
                     return menuIndex;
                 }
                 else
                 {
-                    Console.Write("\nVänligen ange ett nummer mellan 0 och 5.\n", ConsoleColor.Red);
+                    Console.Write("\nVänligen ange ett nummer mellan 0 och 7.\n", ConsoleColor.Red);
                     ContinueOnKeyPressed();
                 }
 
