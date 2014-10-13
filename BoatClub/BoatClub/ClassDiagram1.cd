@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="BoatClub.model.Boat">
+    <Position X="0.75" Y="5.25" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAaABAAACAAAAAEAAABAAEAAAAAAABAgAAAFEAA=</HashCode>
+      <FileName>model\Boat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatClub.model.BoatClubRepository">
+    <Position X="12.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAIAgAAABAAAA=</HashCode>
+      <FileName>model\BoatClubRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatClub.model.User">
+    <Position X="6.75" Y="5.25" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIABAAAAACAAEABCAAQUAAQAAAAAgEAAAAAAAAAA=</HashCode>
+      <FileName>model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatClub.Program">
+    <Position X="6.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatClub.view.BoatView">
+    <Position X="5.5" Y="2" Width="2.75" />
+    <NestedTypes>
+      <Enum Name="BoatClub.view.BoatView.MenuChoice" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>view\BoatView.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAgEAAAAAAFAAAAAAAACgAAAAAAA=</HashCode>
+      <FileName>view\BoatView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatClub.view.MainMenuView">
+    <Position X="2.5" Y="2" Width="2.5" />
+    <NestedTypes>
+      <Enum Name="BoatClub.view.MainMenuView.MenuChoice" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>view\MainMenuView.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAEgAAAAAAAEAAIAAAACgAAAAAAAA=</HashCode>
+      <FileName>view\MainMenuView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoatClub.view.UserView">
+    <Position X="8.75" Y="2" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAEAAABAAAAABAAAAACAAAAAAUAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>view\UserView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
