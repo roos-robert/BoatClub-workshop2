@@ -89,6 +89,23 @@ User->+User: ShowUsersSimple()
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement5.png)
 ## Diagram for requirement 6
+RunBoatClub->+Console: RunBoatClub()  
+
+loop main menu  
+Console->+MainMenuView: InitMenu()  
+MainMenuView->MainMenuView: ViewMenu()  
+end  
+
+MainMenuView->+BoatView: BoatMenu()  
+
+loop handle boat menu  
+BoatView->+BoatView: BoatMenu()  
+BoatView->BoatView: ViewBoatMenu()  
+end  
+
+BoatView->+Boat: HandleBoat()  
+Boat->+BoatClubRepository: GetDocument()  
+Boat->+Boat: HandleBoat()  
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement6.png)
 ## Diagram for requirement 7
