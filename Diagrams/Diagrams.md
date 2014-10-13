@@ -18,6 +18,8 @@ User->+User: AddUser()
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement1.png)
 
 ## Diagram for requirement 2
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement2.1.png)
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement2.2.png)
 
 ## Diagram for requirement 3
 RunBoatClub->+Console: RunBoatClub()  
@@ -64,6 +66,27 @@ User->+User: ShowUsersSimple()
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement5.png)
 ## Diagram for requirement 6
 
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement6.png)
 ## Diagram for requirement 7
+RunBoatClub->+Console: RunBoatClub()  
 
+loop main menu  
+Console->+MainMenuView: InitMenu()  
+MainMenuView->MainMenuView: ViewMenu()  
+end  
+
+MainMenuView->+BoatView: BoatMenu()  
+
+loop handle boat menu  
+BoatView->+BoatView: InitMenu()  
+BoatView->BoatView: ViewMenu()  
+end  
+
+BoatView->+Boat: RemoveBoat()  
+Boat->+BoatClubRepository: GetDocument()  
+Boat->+Boat: RemoveBoat()  
+
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement7.png)
 ## Diagram for requirement 8
+
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement8.png)
