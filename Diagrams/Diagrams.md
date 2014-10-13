@@ -34,34 +34,9 @@ User->+User: RemoveUser()
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement3.png)
 ## Diagram for requirement 4
-RunBoatClub->+Console: RunBoatClub()  
 
-loop main menu  
-Console->+MainMenuView: InitMenu()  
-MainMenuView->MainMenuView: ViewMenu()  
-
-MainMenuView->+UserView: HandleUser()  
-UserView->+User: HandleUser()  
-User->+BoatClubRepository: HandleUser()  
-User->+User: HandleUser()  
-end  
-
-
-![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement4.png)
 ## Diagram for requirement 5
-RunBoatClub->+Console: RunBoatClub()  
 
-loop main menu  
-Console->+MainMenuView: InitMenu()  
-MainMenuView->MainMenuView: ViewMenu()  
-end  
-
-MainMenuView->+UserView: ShowUser()  
-UserView->+User: ShowUser()  
-User->+BoatClubRepository: GetDocument()  
-User->+User: ShowUsersSimple()  
-
-![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement5.png)
 ## Diagram for requirement 6
 
 ## Diagram for requirement 7
