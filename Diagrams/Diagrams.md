@@ -3,12 +3,15 @@ The diagrams are given both in code for http://websequencediagrams.com and in .p
 The requirements refered to can be found at: https://coursepress.lnu.se/kurs/objektorienterad-analys-och-design-med-uml/workshops/workshop-2-design/
 
 ## Diagram for requirement 1
-loop main menu  
-RunBoatClub->+MainMenuView: InitMenu()  
-end  
+RunBoatClub->+Console: RunBoatClub()
 
-MainMenuView->+UserView: AddUser()  
-UserView->+User: AddUser()  
+loop main menu
+Console->+MainMenuView: InitMenu()
+MainMenuView->MainMenuView: ViewMenu()
+
+MainMenuView->+UserView: AddUser()
+UserView->+User: AddUser()
+end
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement1.png)
 
