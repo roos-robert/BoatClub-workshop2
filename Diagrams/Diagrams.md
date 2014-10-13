@@ -11,6 +11,8 @@ MainMenuView->MainMenuView: ViewMenu()
 
 MainMenuView->+UserView: AddUser()  
 UserView->+User: AddUser()  
+User->+BoatClubRepository: GetDocument()  
+User->+User: AddUser()  
 end  
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement1.png)
@@ -26,6 +28,8 @@ MainMenuView->MainMenuView: ViewMenu()
 
 MainMenuView->+UserView: RemoveUser()  
 UserView->+User: RemoveUser()  
+User->+BoatClubRepository: GetDocument()  
+User->+User: RemoveUser()  
 end  
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement3.png)
