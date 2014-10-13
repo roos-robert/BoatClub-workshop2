@@ -88,5 +88,22 @@ Boat->+Boat: RemoveBoat()
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement7.png)
 ## Diagram for requirement 8
+RunBoatClub->+Console: RunBoatClub()  
+
+loop main menu  
+Console->+MainMenuView: InitMenu()  
+MainMenuView->MainMenuView: ViewMenu()  
+end  
+
+MainMenuView->+BoatView: BoatMenu()  
+
+loop handle boat menu  
+BoatView->+BoatView: InitMenu()  
+BoatView->BoatView: ViewMenu()  
+end  
+
+BoatView->+Boat: HandleBoat()  
+Boat->+BoatClubRepository: GetDocument()  
+Boat->+Boat: HandleBoat()  
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement8.png)
