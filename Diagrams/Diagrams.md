@@ -102,7 +102,7 @@ end
 MainMenuView->+BoatView: BoatMenu()  
 
 loop handle boat menu  
-BoatView->+BoatView: InitMenu()  
+BoatView->+BoatView: BoatMenu()  
 BoatView->BoatView: ViewMenu()  
 end  
 
@@ -122,7 +122,7 @@ end
 MainMenuView->+BoatView: BoatMenu()  
 
 loop handle boat menu  
-BoatView->+BoatView: InitMenu()  
+BoatView->+BoatView: BoatMenu()  
 BoatView->BoatView: ViewMenu()  
 end  
 
