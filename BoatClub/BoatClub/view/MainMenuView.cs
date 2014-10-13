@@ -97,7 +97,7 @@ namespace BoatClub.view
                 Console.WriteLine(" 7: Hantera båtar\n");
                 Console.Write(" Ange menyval [0-7]: ");
 
-                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 6)
+                if (int.TryParse(Console.ReadLine(), out menuIndex) && menuIndex >= 0 && menuIndex <= 7)
                 {
                     return menuIndex;
                 }
