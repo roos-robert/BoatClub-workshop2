@@ -17,10 +17,34 @@ User->+User: AddUser()
 
 ![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement1.png)
 
-## Diagram for requirement 2
-![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement2.1.png)
-![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement2.2.png)
+## Diagram for requirement 2.1
+RunBoatClub->+Console: RunBoatClub()  
 
+loop main menu  
+Console->+MainMenuView: InitMenu()  
+MainMenuView->MainMenuView: ViewMenu()  
+end  
+
+MainMenuView->+UserView: ShowUsersSimple()  
+UserView->+User: ShowUsersSimple()  
+User->+BoatClubRepository: GetDocument()  
+User->+User: ShowUsersSimple()  
+
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement2.1.png)
+## Diagram for requirement 2.2
+RunBoatClub->+Console: RunBoatClub()  
+
+loop main menu  
+Console->+MainMenuView: InitMenu()  
+MainMenuView->MainMenuView: ViewMenu()  
+end  
+
+MainMenuView->+UserView: ShowUsersFull()  
+UserView->+User: ShowUsersFull()  
+User->+BoatClubRepository: GetDocument()  
+User->+User: ShowUsersFull()
+
+![alt tag](https://github.com/rr222cy/BoatClub-workshop2/blob/master/Diagrams/Requirement2.2.png)
 ## Diagram for requirement 3
 RunBoatClub->+Console: RunBoatClub()  
 
