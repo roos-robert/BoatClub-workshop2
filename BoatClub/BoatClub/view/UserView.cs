@@ -24,7 +24,7 @@ namespace BoatClub.view
         public void AddUser(User userModel)
         {
             string name;
-            int socialSecurity;
+            double socialSecurity;
 
             Console.Clear();
             Console.WriteLine("Lägg till medlem.\n");
@@ -36,7 +36,7 @@ namespace BoatClub.view
                 try
                 {
                     Console.Write("\nAnge personnummer (10 siffror): ");
-                    socialSecurity = Int32.Parse(Console.ReadLine());
+                    socialSecurity = Double.Parse(Console.ReadLine());
 
                     if(socialSecurity.ToString().Length != 10)
                     {

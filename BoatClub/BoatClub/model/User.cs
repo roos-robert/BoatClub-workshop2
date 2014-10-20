@@ -13,7 +13,7 @@ namespace BoatClub.model
         // Fields
         private int _memberID;
         private string _name;
-        private int _socialSecurity = 0;
+        private double _socialSecurity = 0;
         BoatClubRepository xmlDb = new BoatClubRepository();
 
         // Properties
@@ -32,14 +32,14 @@ namespace BoatClub.model
             set { this._name = value; }
         }
 
-        public int SocialSecurity
+        public double SocialSecurity
         {
             get { return this._socialSecurity; }
             set { this._socialSecurity = value; }
         }
 
         // Methods
-        public void AddUser(string name, int socialSecurity)
+        public void AddUser(string name, double socialSecurity)
         {
             Random rnd = new Random();
             int memberId = rnd.Next(1, 999999999);
@@ -71,7 +71,7 @@ namespace BoatClub.model
             }
         }
 
-        public void UpdateUser(int memberId, string name = null, int socialSecurity = 0)
+        public void UpdateUser(int memberId, string name = null, double socialSecurity = 0)
         {
             var xml = xmlDb.GetDocument();
 
@@ -95,7 +95,7 @@ namespace BoatClub.model
                               select new User
                               {
                                   Name = (string)user.Attribute("name"),
-                                  SocialSecurity = (int)user.Attribute("socialSecurity"),
+                                  SocialSecurity = (double)user.Attribute("socialSecurity"),
                                   MemberId = (int)user.Attribute("memberId")
                               }).Single();
 
@@ -110,7 +110,7 @@ namespace BoatClub.model
                             select new User
                             {
                                 Name = (string)user.Attribute("name"),
-                                SocialSecurity = (int)user.Attribute("socialSecurity"),
+                                SocialSecurity = (double)user.Attribute("socialSecurity"),
                                 MemberId = (int)user.Attribute("memberId")
                             }).ToList();
 
@@ -125,7 +125,7 @@ namespace BoatClub.model
                             select new User
                             {
                                 Name = (string)user.Attribute("name"),
-                                SocialSecurity = (int)user.Attribute("socialSecurity"),
+                                SocialSecurity = (double)user.Attribute("socialSecurity"),
                                 MemberId = (int)user.Attribute("memberId")
                             }).ToList();
 

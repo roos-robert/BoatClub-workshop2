@@ -7,6 +7,8 @@
     <User name="Amanda" socialSecurity="40128" memberId="946436441" />
     <User name="Mattias" socialSecurity="820711" memberId="802314232" />
     <User name="Sven" socialSecurity="560210" memberId="512762677" />
+    <User name="Bjorn" socialSecurity="1234568431" memberId="482307664" />
+    <User name="Cindy" socialSecurity="8402134645" memberId="996484044" />
   </Users>
   <Boats>
     <Boat memberId="802314232" boatId="783099521" boatType="Segelbåt" boatLength="14" />
