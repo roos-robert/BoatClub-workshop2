@@ -78,6 +78,16 @@ namespace BoatClub.view
                 {
                     Console.Write("\nAnge medlemsid: ");
                     memberId = Int32.Parse(Console.ReadLine());
+                    try
+                    {
+                        userModel.GetUser(memberId);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("\nAnge ett korrekt medlemsid!:");
+                        ContinueOnKeyPressed();
+                        return;
+                    }
 
                     Console.Write("\nAnge namn: ");
                     name = Console.ReadLine();
