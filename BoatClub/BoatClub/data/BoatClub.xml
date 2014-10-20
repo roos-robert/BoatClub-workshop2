@@ -13,5 +13,6 @@
     <Boat memberId="802314232" boatId="783099521" boatType="Kajak" boatLength="2" />
     <Boat memberId="802314232" boatId="783099521" boatType="Färja" boatLength="200" />
     <Boat memberId="946436441" boatId="783099521" boatType="Segelbåt" boatLength="14" />
+    <Boat memberId="45873" boatId="328396586" boatType="Eka" boatLength="4" />
   </Boats>
 </BoatClub>
