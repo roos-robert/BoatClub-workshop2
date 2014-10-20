@@ -127,12 +127,16 @@ namespace BoatClub.view
                     catch (Exception)
                     {
                         Console.WriteLine("Ange en existerande medlem!");
+                        ContinueOnKeyPressed();
+                        return;
                     }
 
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Ange ett korrekt medlemsid!");
+                    ContinueOnKeyPressed();
+                    return;
                 }
             }
 
