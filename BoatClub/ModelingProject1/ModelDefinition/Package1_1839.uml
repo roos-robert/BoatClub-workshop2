@@ -15,8 +15,8 @@
           <association
             Id="037e9018-f250-4717-8b55-165435679ec2"
             isDerived="false"
-            sourceEndRoleName="MainMenuView"
-            targetEndRoleName="BoatView"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -27,7 +27,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="7ad7fc30-9fd5-40a0-9eb8-3c2f108d1187"
-                  name="MainMenuView"
+                  name=" "
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -51,7 +51,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="467accca-24b1-4166-99eb-7babacb288d5"
-                  name="BoatView"
+                  name=" "
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -76,8 +76,8 @@
           <association
             Id="cc690d55-0080-49f8-a91b-7d9d10582dfb"
             isDerived="false"
-            sourceEndRoleName="MainMenuView"
-            targetEndRoleName="UserView"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -88,7 +88,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="309edcfe-5c24-44ca-b5a6-65ef0ad1c3c6"
-                  name="MainMenuView"
+                  name=" "
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -112,7 +112,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="d1aca411-b93e-42fc-a4e1-a88302f2dfce"
-                  name="UserView"
+                  name=" "
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -143,7 +143,132 @@
         name="BoatView"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="a3657826-1968-474f-a624-a8914317b005"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e670becb-61b7-471d-9b67-33bcf35a21de"
+              LastKnownName="Boat"
+              LastKnownLocation="Package_1839.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7fa0937f-5bda-4d47-85f4-3d999aa9945b"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="342320ff-67b8-4276-879d-6c80e14f5240"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f1a96d75-3968-4d84-a262-cac2bb914346"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dfa715f2-a3e7-4463-ac36-a2d46d9f255f"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e90a0c39-1a5d-4c34-8ab2-73e92a4a7d07"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="84529035-54eb-4735-8cc2-c050d17451f4"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="015935a1-d4e5-4c9e-a6d0-a9d60fae6e84"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d8acdd9c-cf83-409b-9f9e-624338ab2fe6"
+              LastKnownName="User"
+              LastKnownLocation="Package_1839.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fc44abbd-7b0e-4c6d-a852-f33dcf00e3fc"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="13edf7a9-8efa-43d9-b226-4a51ff0941fe"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="722be52d-a779-4404-9742-8bad80e1cd5d"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="92a64e83-cd91-4de1-866e-2076844b5118"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e71dc009-8d3b-4d7f-be66-e929b510d4ff"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="83e1bdb6-691e-4932-93cc-08b3e1a367f2"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -151,7 +276,132 @@
         name="UserView"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="630a88f0-7eb7-41a0-a466-b780609519d9"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d8acdd9c-cf83-409b-9f9e-624338ab2fe6"
+              LastKnownName="User"
+              LastKnownLocation="Package_1839.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c46c9b4a-49d6-458a-86c4-039c4f6e051c"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d549a137-163a-4eb2-8eff-5d537a83a4ad"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="00e2ad77-d0b1-4b11-8c91-463f715ccb2b"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="13f1d2df-9436-4191-94f8-36fa0f3545d9"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bbf55f25-726c-4c87-814e-01569be392c1"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a41a0ce9-240f-4fa1-9c26-f180501df399"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f505cc86-d469-4ea6-893a-35b17b515ed6"
+            isDerived="false"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e670becb-61b7-471d-9b67-33bcf35a21de"
+              LastKnownName="Boat"
+              LastKnownLocation="Package_1839.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b92ad7e-8170-408d-9472-16f9f9725a19"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b3437766-4d73-45f7-9fd7-db8abbd485f3"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5594229d-ed71-46a2-bb5c-abaf074d4c56"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6fc8681d-2cac-4111-957c-35a8c5589d12"
+                  name=" "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="82356b42-e8e2-4fff-b537-457fa38310a7"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a87d0a36-9337-4959-8355-ab0c6eb9cc94"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

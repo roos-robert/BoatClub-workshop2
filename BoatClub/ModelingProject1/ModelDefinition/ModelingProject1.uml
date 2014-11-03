@@ -41,8 +41,8 @@
           <association
             Id="662eb0b8-1dbd-4e30-a861-ac17e14a85a6"
             isDerived="false"
-            sourceEndRoleName="Program"
-            targetEndRoleName="MainMenuView"
+            sourceEndRoleName=" "
+            targetEndRoleName=" "
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -53,7 +53,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="3169d441-3f2d-4d9d-a981-dc95d1884a3c"
-                  name="Program"
+                  name=" "
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -77,7 +77,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="644173c8-bd8f-4c7f-a202-281e52d10abd"
-                  name="MainMenuView"
+                  name=" "
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
