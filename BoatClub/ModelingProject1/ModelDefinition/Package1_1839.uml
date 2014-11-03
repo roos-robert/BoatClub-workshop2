@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="014ee17d-e23c-4ff3-a722-0505d26fc96f"
+  name="view" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="110001f3-c456-47e4-8b9a-5ca8f652475d"
+        name="MainMenuView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="037e9018-f250-4717-8b55-165435679ec2"
+            isDerived="false"
+            sourceEndRoleName="MainMenuView"
+            targetEndRoleName="BoatView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="bb8f0ff0-0008-44c2-8884-6717554a2459"
+              LastKnownName="BoatView"
+              LastKnownLocation="Package1_1839.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7ad7fc30-9fd5-40a0-9eb8-3c2f108d1187"
+                  name="MainMenuView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ca9dea46-a656-410d-9b8f-b8a81f219c7e"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="bb889960-bd80-4f97-a661-f107ab38fdec"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="467accca-24b1-4166-99eb-7babacb288d5"
+                  name="BoatView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="57083430-2b93-4fce-bc88-66a308fc8b7b"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0b4c2ef6-d31b-46aa-9eb2-35cc02832808"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="cc690d55-0080-49f8-a91b-7d9d10582dfb"
+            isDerived="false"
+            sourceEndRoleName="MainMenuView"
+            targetEndRoleName="UserView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="66bdccf4-e5f3-47cc-9fae-bde2a41a0814"
+              LastKnownName="UserView"
+              LastKnownLocation="Package1_1839.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="309edcfe-5c24-44ca-b5a6-65ef0ad1c3c6"
+                  name="MainMenuView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="402d5d9d-8324-4f34-b8b3-f84d67b7f9bf"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2b1ed3ff-9a85-4abe-8641-addbae27cd9b"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d1aca411-b93e-42fc-a4e1-a88302f2dfce"
+                  name="UserView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a864f7b4-6104-4024-885f-4b977c9f9cef"
+                      name="Lower" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a18a2aea-8546-43ae-a89c-aa9443a7285c"
+                      name="Upper" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bb8f0ff0-0008-44c2-8884-6717554a2459"
+        name="BoatView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="66bdccf4-e5f3-47cc-9fae-bde2a41a0814"
+        name="UserView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
