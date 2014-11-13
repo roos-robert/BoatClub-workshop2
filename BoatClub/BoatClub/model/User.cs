@@ -14,8 +14,8 @@ namespace BoatClub.model
         private int _memberID;
         private string _name;
         private double _socialSecurity = 0;
-        BoatClubRepository xmlDb = new BoatClubRepository();
         public List<Boat> UserBoats = new List<Boat>();
+        BoatClubRepository xmlDb = new BoatClubRepository();
 
         // Properties
         public int MemberId
@@ -111,7 +111,7 @@ namespace BoatClub.model
             return singleUser;
         }
 
-        public IEnumerable<User> ShowUsersSimple()
+        public IEnumerable<User> ShowUsers()
         {
             var xml = xmlDb.GetDocument();
 
@@ -133,25 +133,9 @@ namespace BoatClub.model
             return userList;
         }
 
-        public IEnumerable<User> ShowUsersFull()
-        {
-            var xml = xmlDb.GetDocument();
-
-            var userList = (from user in xml.Descendants("User")
-                            select new User
-                            {
-                                Name = (string)user.Attribute("name"),
-                                SocialSecurity = (double)user.Attribute("socialSecurity"),
-                                MemberId = (int)user.Attribute("memberId")
-                            }).ToList();
-
-            return userList;
-        }
-
         // Constructor
         public User()
         {
-            // EMPTY!
         }
     }
 }

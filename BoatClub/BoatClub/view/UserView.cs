@@ -112,9 +112,6 @@ namespace BoatClub.view
                 ContinueOnKeyPressed();
                 break;
             }
-
-            // TODO menu where user can choose to update info or add a boat
-            
         }
 
         public void RemoveUser(User userModel)
@@ -186,7 +183,7 @@ namespace BoatClub.view
         {
             Console.Clear();
 
-            IEnumerable<User> users = userModel.ShowUsersSimple();        
+            IEnumerable<User> users = userModel.ShowUsers();        
 
             foreach (var user in users)
             {
@@ -212,7 +209,7 @@ namespace BoatClub.view
         {
             Console.Clear();
 
-            IEnumerable<User> users = userModel.ShowUsersSimple();
+            IEnumerable<User> users = userModel.ShowUsers();
 
             foreach (var user in users)
             {

@@ -13,8 +13,5 @@
         <Boat boatId="783099524" boatType="Roddbåt" boatLength="12" />
       </Boats>
     </User>
-    <User name="Gunnar Kråka" socialSecurity="2343124321" memberId="235971374">
-      <Boats></Boats>
-    </User>
   </Users>
 </BoatClub>
