@@ -1,20 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BoatClub>
   <Users>
-    <User name="Robert Roos" socialSecurity="1111111111" memberId="342931446" />
-    <User name="Pelle" socialSecurity="131231" memberId="58937304" />
-    <User name="Kalle" socialSecurity="23123" memberId="470080994" />
-    <User name="Amanda" socialSecurity="40128" memberId="946436441" />
-    <User name="Mattias" socialSecurity="820711" memberId="802314232" />
-    <User name="Sven" socialSecurity="560210" memberId="512762677" />
-    <User name="Bjorn" socialSecurity="1234568431" memberId="482307664" />
-    <User name="Cindy" socialSecurity="8402134645" memberId="996484044" />
+    <User name="Robert Roos" socialSecurity="1111111111" memberId="1">
+      <Boat boatId="783099521" boatType="Segelbåt" boatLength="14" />
+      <Boat boatId="783099521" boatType="Kajak" boatLength="4" />
+    </User>
+    <User name="Kalle Kula" socialSecurity="1111111111" memberId="2">
+      <Boat boatId="783099521" boatType="Färja" boatLength="250" />
+      <Boat boatId="783099521" boatType="Roddbåt" boatLength="12" />
+    </User>
   </Users>
-  <Boats>
-    <Boat memberId="802314232" boatId="783099521" boatType="Segelbåt" boatLength="14" />
-    <Boat memberId="802314232" boatId="783099521" boatType="Kajak" boatLength="2" />
-    <Boat memberId="802314232" boatId="783099521" boatType="Färja" boatLength="200" />
-    <Boat memberId="946436441" boatId="783099521" boatType="Segelbåt" boatLength="14" />
-    <Boat memberId="45873" boatId="328396586" boatType="Eka" boatLength="4" />
-  </Boats>
 </BoatClub>

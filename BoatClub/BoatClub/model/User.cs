@@ -15,6 +15,7 @@ namespace BoatClub.model
         private string _name;
         private double _socialSecurity = 0;
         BoatClubRepository xmlDb = new BoatClubRepository();
+        public List<Boat> UserBoats = new List<Boat>();
 
         // Properties
         public int MemberId
@@ -96,7 +97,14 @@ namespace BoatClub.model
                               {
                                   Name = (string)user.Attribute("name"),
                                   SocialSecurity = (double)user.Attribute("socialSecurity"),
-                                  MemberId = (int)user.Attribute("memberId")
+                                  MemberId = (int)user.Attribute("memberId"),
+                                  UserBoats = (from boat in user.Descendants("Boat")
+                                              select new Boat
+                                              {
+                                                  BoatId = (int)boat.Attribute("boatId"),
+                                                  BoatType = (string)boat.Attribute("boatType"),
+                                                  Length = (int)boat.Attribute("boatLength")
+                                              }).ToList()
                               }).Single();
 
             return singleUser;
@@ -112,6 +120,7 @@ namespace BoatClub.model
                                 Name = (string)user.Attribute("name"),
                                 SocialSecurity = (double)user.Attribute("socialSecurity"),
                                 MemberId = (int)user.Attribute("memberId")
+                               
                             }).ToList();
 
             return userList;

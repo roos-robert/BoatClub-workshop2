@@ -162,17 +162,14 @@ namespace BoatClub.view
             Console.Write("Ange medlemsid på den medlem du vill kolla på : ");
             memberId = Int32.Parse(Console.ReadLine());
 
-            IEnumerable<User> users = userModel.ShowUsersSimple();
-
-            foreach (var user in users)
-            {                
+            User user = userModel.GetUser(memberId);
+                        
                 if(memberId == user.MemberId)
                 {
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Namn: {0}, ID: {1}, Personnummer: {2}\n", user.Name, user.MemberId, user.SocialSecurity);
 
-                    var boats = boatModel.GetAllUserBoats(user.MemberId);
-                    foreach (var boat in boats)
+                    foreach (var boat in user.UserBoats)
                     {
                         Console.WriteLine("------");
                         Console.WriteLine("Båtens ID: {0}", boat.BoatId);
@@ -181,7 +178,7 @@ namespace BoatClub.view
                         Console.WriteLine("------");
                     }
                 }
-            }
+            
             ContinueOnKeyPressed();
         }
 
