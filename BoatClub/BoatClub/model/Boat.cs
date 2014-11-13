@@ -12,7 +12,6 @@ namespace BoatClub.model
     {
         // Fields
         private int _BoatID;
-        private int _MemberID = 0;
         private string _BoatType;
         private int _Length = 0;
         BoatClubRepository xmlDb = new BoatClubRepository();
@@ -24,15 +23,6 @@ namespace BoatClub.model
             set
             {
                 this._BoatID = value;
-            }
-        }
-
-        public int MemberID
-        {
-            get { return this._MemberID; }
-            set
-            {
-                this._MemberID = value;
             }
         }
 
@@ -114,46 +104,6 @@ namespace BoatClub.model
             }
 
             xml.Save(xmlDb.XMLPath);
-        }
-
-        public Boat GetBoatInfo(int boatId)
-        {
-            var xml = xmlDb.GetDocument();
-
-            var boatInfo = (from boat in xml.Descendants("Boat").Where(x => (int)x.Attribute("boatId") == boatId)
-                            select new Boat
-                            {
-                                BoatId = (int)boat.Attribute("boatId"),
-                                MemberID = (int)boat.Attribute("memberId"),
-                                BoatType = (string)boat.Attribute("boatType"),
-                                Length = (int)boat.Attribute("boatLength")
-                            }).Single();                                
-
-            return boatInfo;
-        }
-
-        public IEnumerable<Boat> GetAllUserBoats(int memberId)
-        {
-            var xml = xmlDb.GetDocument();
-
-            var boatInfo = (from boat in xml.Descendants("Boat").Where(x => (int)x.Attribute("memberId") == memberId)
-                            select new Boat
-                            {
-                                BoatId = (int)boat.Attribute("boatId"),
-                                MemberID = (int)boat.Attribute("memberId"),
-                                BoatType = (string)boat.Attribute("boatType"),
-                                Length = (int)boat.Attribute("boatLength")
-                            }).ToList();
-
-            return boatInfo;
-        }
-
-        public int NumberOfBoats(int memberId)
-        {
-            var xml = xmlDb.GetDocument();
-
-            return xml.Descendants("Boat")
-                    .Where(x => (int)x.Attribute("memberId") == memberId).Count();
         }
     }
 }
