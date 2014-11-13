@@ -103,7 +103,6 @@ namespace BoatClub.view
             Console.Clear();
             Console.WriteLine("Lägg till ny båt.");
 
-            //add check to see if member exists later!
             while (true)
             {
                 try

@@ -69,13 +69,21 @@ namespace BoatClub.model
 
             var xml = xmlDb.GetDocument();
 
-            xml.Root.Element("Boats").Add(new XElement("Boat",
-                    new XAttribute("memberId", memberId),
+            
+            //xml.Descendants("Boats").Where(x => (int)x.Attribute("memberId") == memberId).
+            xml.Element("BoatClub")
+                .Element("Users")
+                .Elements("User")
+                .Where(User => (int)User.Attribute("memberId") == memberId).FirstOrDefault()
+                .Element("Boats")
+                .Add(
+            new XElement("Boat",
                     new XAttribute("boatId", boatId),
                     new XAttribute("boatType", boatType),
                     new XAttribute("boatLength", length)
                 ));
 
+            
             xml.Save(xmlDb.XMLPath);
         }
 
