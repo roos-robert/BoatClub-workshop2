@@ -5,7 +5,6 @@
       <Boats>
         <Boat boatId="783099521" boatType="Segelbåt" boatLength="14" />
         <Boat boatId="783099521" boatType="Kajak" boatLength="4" />
-        <Boat boatId="399506173" boatType="Kanot" boatLength="2" />
       </Boats>
     </User>
     <User name="Kalle Kula" socialSecurity="1111111111" memberId="2">

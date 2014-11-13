@@ -83,12 +83,13 @@ namespace BoatClub.view
                         length = 0;
                     }
                     boatModel.UpdateBoat(memberId, boatId, boatType, length);
+                    Console.WriteLine("\nBåten är uppdaterad!");
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("\nNågot gick fel. Kontrollera att du angett rätt båtid.");
                 }
-                Console.WriteLine("\nBåten är uppdaterad!");
+                
                 ContinueOnKeyPressed();
                 return;
             }
