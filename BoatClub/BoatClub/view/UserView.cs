@@ -192,10 +192,6 @@ namespace BoatClub.view
             {
                 Console.WriteLine("------------------------------");
                 Console.WriteLine("Namn: {0}, ID: {1}, Personnummer: {2}\n", user.Name, user.MemberId, user.SocialSecurity);
-                //Console.WriteLine("ID: {0}\n", user.MemberId);
-                //Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
-
-
                 //Removed the number of boats since all boats belonging to that member will be listed anyway
                 //Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
                 var boats = boatModel.GetAllUserBoats(user.MemberId);
@@ -222,10 +218,7 @@ namespace BoatClub.view
             foreach (var user in users)
             {
                 Console.WriteLine("------------------------------");
-                Console.WriteLine("Namn: {0}, ID: {1}, Antal båtar: {2}\n", user.Name, user.MemberId, boatModel.NumberOfBoats(user.MemberId));
-                //Console.WriteLine("ID: {0}\n", user.MemberId);
-                //Console.WriteLine("Personnummer: {0}\n", user.SocialSecurity);
-                //Console.WriteLine("Antal båtar: {0}", boatModel.NumberOfBoats(user.MemberId));
+                Console.WriteLine("Namn: {0}, ID: {1}, Antal båtar: {2}\n", user.Name, user.MemberId, user.UserBoats.Count);
                 Console.WriteLine("------------------------------\n");
             }
 
