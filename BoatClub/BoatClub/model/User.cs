@@ -49,7 +49,8 @@ namespace BoatClub.model
             xml.Root.Element("Users").Add(new XElement("User",
             new XAttribute("name", name),
             new XAttribute("socialSecurity", socialSecurity),
-            new XAttribute("memberId", memberId)));
+            new XAttribute("memberId", memberId),
+            new XElement("Boats", "")));
 
             xml.Save(xmlDb.XMLPath);
         }

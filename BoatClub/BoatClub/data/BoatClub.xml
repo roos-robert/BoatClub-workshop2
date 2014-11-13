@@ -2,12 +2,19 @@
 <BoatClub>
   <Users>
     <User name="Robert Roos" socialSecurity="1111111111" memberId="1">
-      <Boat boatId="783099521" boatType="Segelbåt" boatLength="14" />
-      <Boat boatId="783099521" boatType="Kajak" boatLength="4" />
+      <Boats>
+        <Boat boatId="783099521" boatType="Segelbåt" boatLength="14" />
+        <Boat boatId="783099521" boatType="Kajak" boatLength="4" />
+      </Boats>
     </User>
     <User name="Kalle Kula" socialSecurity="1111111111" memberId="2">
-      <Boat boatId="783099521" boatType="Färja" boatLength="250" />
-      <Boat boatId="783099521" boatType="Roddbåt" boatLength="12" />
+      <Boats>
+        <Boat boatId="783099521" boatType="Färja" boatLength="250" />
+        <Boat boatId="783099521" boatType="Roddbåt" boatLength="12" />
+      </Boats>
+    </User>
+    <User name="Gunnar Kråka" socialSecurity="2343124321" memberId="235971374">
+      <Boats></Boats>
     </User>
   </Users>
 </BoatClub>
